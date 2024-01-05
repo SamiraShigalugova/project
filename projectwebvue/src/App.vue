@@ -2,6 +2,9 @@
 import FirstCol from './components/FirstCol.vue'
 import SecondCol from './components/SecondCol.vue'
 import SupBody from './components/SupBody.vue'
+import tar1 from './components/tar1.vue'
+import tar2 from './components/tar2.vue'
+import tar3 from './components/tar3.vue'
 </script>
 
 <template>
@@ -251,67 +254,28 @@ import SupBody from './components/SupBody.vue'
 </div>
 <section id="block-tariffs">
   <h2 class="block-title">Тарифы</h2>
-  <div>
       <div class="tariffs">
           <div class="container">
               <div class="tar">
-                  <div class="col-lg-4 col-md-12 col-xs-12 col-flex">
-                      <div class="tariff">
-                          <div class="tariff-wrapper">
-                              <div class="tariff-header">
-                                  <div class="tariff-title">Стартовый</div><br>
-                              </div>
-                              <ul class="spisok">
-                                  <li><span>Консультации и работы по SEO<br></span></li>
-                                  <li><span>Услуги дизайнера<br></span></li>
-                                <li><span>Неиспользованные оплаченные часы переносятся на следующий месяц<br></span></li>
-                              <li><span>Предоплтата от 6 000 рублей в месяц<br></span></li></ul>
-                          
-                              <div class="tariff-footer">
-                                  <a href="#forma" class="tar-btn">Свяжитесь с нами!</a>
-                              </div></div>
-                          </div>
-                      </div>
-                  
-                  <div class="col-lg-4 col-md-12 col-flex col-xs-12">
-                      <div class="tariff">
-                          <div class="tariff-wrapper">
-                              <div class="tariff-header">
-                                  <div class="tariff-title">Бизнес</div><br>
-                              </div>
-                              <ul class="spisok">
-                                  <li><span>Консультации и работы по SEO<br></span></li>
-                                <li><span>Услуги дизайнера<br></span></li>
-                              <li><span>Высокое время реакции - до 2 рабочих дней</span></li>
-                              <li><span>Неиспользованные оплаченные часы не переносятся <br></span></li>
-                            <li><span>Предоплтата от 30 000 рублей в месяц<br></span></li></ul>
-                              <div class="tariff-footer">
-                                  <a href="#forma" class="tar-btn">Свяжитесь с нами!</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-lg-4 col-md-12 col-flex col-xs-12">
-                      <div class="tariff">
-                          <div class="tariff-wrapper">
-                              <div class="tariff-header">
-                                  <div class="tariff-title">VIP</div><br>
-                              </div>
-                              <ul class="spisok">
-                                  <li><span>Консультации и работы по SEO<br></span></li>
-                                <li><span>Услуги дизайнера<br></span></li>
-                              <li><span>Максимальное время реакции - в день обращения<br></span></li>
-                              <li><span>Неиспользованные оплаченные часы не переносятся <br></span></li>
-                            <li><span>Предоплтата от 270 000 рублей в месяц<br></span></li></ul>
-                              <div class="tariff-footer">
-                                  <a href="#" class="tar-btn">Свяжитесь с нами!</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+                  <tar1 title="Стартовый" text1="Консультации и работы по SEO" 
+                  text2="Услуги дизайнера" 
+                  text3="Неиспользованные оплаченные часы переносятся на следующий месяц" 
+                  text4="Предоплтата от 6 000 рублей в месяц"
+                  textb="Свяжитесь с нами!"></tar1>
+                  <tar2 title="Бизнес" text1="Консультации и работы по SEO" 
+                  text2="Услуги дизайнера" 
+                  text3="Высокое время реакции - до 2 рабочих дней" 
+                  text4="Неиспользованные оплаченные часы не переносятся"
+                  text5="Предоплтата от 30 000 рублей в месяц"
+                  textb="Свяжитесь с нами!"></tar2>
+                  <tar3 title="VIP" text1="Консультации и работы по SEO" 
+                  text2="Услуги дизайнера" 
+                  text3="Максимальное время реакции - в день обращения" 
+                  text4="Неиспользованные оплаченные часы не переносятся"
+                  text5="Предоплтата от 270 000 рублей в месяц"
+                  textb="Свяжитесь с нами!"></tar3>
+                </div>
+                </div>
                   <div class="col-xs-12">
                       <div class="tariffs-ps">
                           Вам не подходят наши тарифы? Оставьте заявку и мы предложим вам индивидуальные
@@ -319,8 +283,7 @@ import SupBody from './components/SupBody.vue'
                           <a href="#" class="tariffs-link">Получить индивидуальный тариф</a>
                       </div>
                   </div>
-          </div>
-      </div>
+                </div>
 </section>
 </template>
 
@@ -755,7 +718,7 @@ video {
     #block-tariffs {
       padding: 60px 0 90px;
       font-family: "Montserrat", sans-serif;
-      background: url(.src/assets/img/D-background.svg) right top, #fff;
+      background: url("./assets/img/D-background.svg") right top, #fff;
       background-size: cover;
     }
 
@@ -1152,7 +1115,7 @@ p:last-child {
 #block-tariffs {
   padding: 60px 0 90px;
   font-family: "Montserrat", sans-serif;
-  background: url(D-background.svg) no-repeat right top, #fff;
+  background: url("./assets/img/D-background.svg") no-repeat right top, #fff;
   background-size: 58%;
 }
 #block-tariffs .block-title {
