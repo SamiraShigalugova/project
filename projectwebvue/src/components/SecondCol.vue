@@ -1,14 +1,16 @@
 <script setup>
 defineProps({
-    picture_src: String,
     text:String,
 })
 </script>
+
+
 <template>
-    <div class="col-lg-3 col-md-4 col-sm-2 col-6 competency-achievement">
-        <div class="competency-achievement-wrapper"><img :src="picture_src"></div>
-        <div class="competency-achievement-description">
-          {{text}}
+  <div class="col-xl-6 col-lg-12 col-md-12 col-sm-6 col-xs-12 expertise-col">
+    <div class="expertise-item">
+        <div class="expertise-item-body">
+{{text}}
         </div>
-      </div>
+    </div>
+</div>
 </template>

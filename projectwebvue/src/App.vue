@@ -1,8 +1,8 @@
 <script setup>
 import FirstCol from './components/FirstCol.vue'
 import SecondCol from './components/SecondCol.vue'
+import SupBody from './components/SupBody.vue'
 </script>
-
 
 <template>
   <header>
@@ -56,7 +56,6 @@ import SecondCol from './components/SecondCol.vue'
       </div>
     </div>
   </nav>
-</header>
   <div>
     <div class="block-main">
       <div class="block-main-background">
@@ -97,7 +96,7 @@ import SecondCol from './components/SecondCol.vue'
       </div>
     </div>
   </div>
-
+</header>
   <div class="container2 col-lg-12 col-md-10 col-sm-12">
     <div class="col-lg-6 col-md-12 col-sm-12 col-12">
       <h1 class="page-title1">13 лет совершенствуем компетенции в Drupal поддержке!</h1>
@@ -105,8 +104,13 @@ import SecondCol from './components/SecondCol.vue'
         Разрабатываем и оптимизируем модули, расширяем функциональность сайтов, обновляем дизайн
       </div>
     </div>
-    <SecondCol picture_src='./assets/img/competency-1.svg' text="Добавление информации на сайт, создание новых разделов"/>
-
+    <div class="row col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="col-lg-3 col-md-4 col-sm-2 col-6 competency-achievement">
+        <div class="competency-achievement-wrapper"><img src="./assets/img/competency-1.svg"></div>
+        <div class="competency-achievement-description">
+          Добавление информации на сайт, создание новых разделов
+        </div>
+      </div>
         <div class="col-lg-3 col-md-4 col-6 competency-achievement">
           <div class="competency-achievement-wrapper"><img src="./assets/img/competency-2.svg"></div>
               <div class="competency-achievement-description">
@@ -156,13 +160,102 @@ import SecondCol from './components/SecondCol.vue'
               </div>
         </div>
       </div>
+  </div>
+
+  <div class="advantages with-expertise">
+    <div class="container3 col-lg-12 col-md-12 col-sm-12">
+      <div class="row col-lg-12 col-md-12 col-sm-12 col-12">
+        <center><h1 class="page-title">Поддержка <br>от Drupal-coder</h1></center>
+      </div>
+      <div class="row col-lg-12 col-md-12 col-sm-12 col-12 advantages-row">
+        <div class="col-lg-3 col-md-12 col-sm-6 col-12 cards">
+          <div class="sup mx-0">
+            <SupBody title="01" text0="Постановка задачи по Email" text="Удобная и привычная модель постановки задач, при которой задачи фиксируются и никогда не теряются."/>
+            <img src="./assets/img/support1.svg" width="70" height="70" class="p3icons">
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-6 col-12 cards">
+          <div class="sup mx-0">
+            <SupBody title="02" text0="Система Helpdesk – отчетность, прозрачность" text="Возможность посмотреть все заявки в работе и отработанные часы в личном кабинете через браузер."/>
+            <div class="p3icons"> <img src="./assets/img/support2.svg" width="70" height="70"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-6 col-12 cards">
+          <div class="sup mx-0">
+            <SupBody title="03" text0="Расширенная техническая поддержка" text="Возможность организации расширенной техподдержки с 6:00 до 22:00 без выходных."/>
+            <div class="p3icons"> <img src="./assets/img/support3.svg" width="70" height="70" class="p3icons"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-6 col-12 cards">
+          <div class="sup mx-0">
+            <SupBody title="04" text0="Персональный менеджер проекта" text="Ваш менеджер проекта всегда в курсе текущего состояния проекта и в любой момент готов ответить на любые вопросы."/>
+            <div class="p3icons"> <img src="./assets/img/support4.svg" width="70" height="70" class="p3icons"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-6 col-12 cards">
+          <div class="sup mx-0">
+            <SupBody title="05" text0="Удобные способы оплаты" text="ВБезналичный расчет по договору или электронные деньги: WebMoney, Яндекс.Деньги, Paypal."/>
+            <div class="p3icons"> <img src="./assets/img/support5.svg" width="70" height="70" class="p3icons"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-6 col-12 cards">
+          <div class="sup mx-0">
+            <SupBody title="06" text0="Работаем с SLA и NDA" text="Работа в рамках соглашений о конфиденциальности и об уровне качетсва работ."/>
+            <div class="p3icons"> <img src="./assets/img/support6.svg" width="70" height="70" class="p3icons"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-6 col-12 cards">
+          <div class="sup mx-0">
+            <SupBody title="07" text0="Штатные специалисты" text="Надежные штатные специалисты, никаких фрилансеров.."/>
+            <div class="p3icons"> <img src="./assets/img/support7.svg" width="70" height="70" class="p3icons"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-6 col-12 cards">
+          <div class="sup mx-0">
+            <SupBody title="08" text0="Удобные каналы связи" text="Консультации по телефону, скайпу, в месенджерах."/>
+            <div class="p3icons"> <img src="./assets/img/support8.svg" width="70" height="70" class="p3icons"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="expertise">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xs-12 col-md-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <h2 class="block-title">Экспертиза в Drupal,<br> опыт 14 лет!</h2>
+                    </div>
+                </div>
+                <div class="row row-flex expertise-row col-md-12">
+                  <SecondCol text="Только системный подход – контроль версий, резервирование и
+                  тестирование!"/>
+                  <SecondCol text="Учавствуем в разработке ядра Drupal и модулей на Drupal.org, разрабатываем свои модули Drupal"/>
+                  <SecondCol text="Только Drupal сайты, не берем на поддержку сайты на других
+                  CMS!"/>
+                  <SecondCol text="Поддерживаем сайты на Drupal 5,6,7 и 8"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="expertise-img"><img class="img-responsive" src="./assets/img/laptop.png"></div>
+</div>
 </template>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @media (min-width:1024px) {
   .navbar{
-    background-color: transparent;
+    background-color: black;
   }
   .block-main {
     padding-top: 150px;
@@ -336,6 +429,7 @@ header {
   font-size: 12px;
   width: 100%;
   overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 video {
   display: inline-block;
