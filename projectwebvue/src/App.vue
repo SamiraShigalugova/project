@@ -1,13 +1,161 @@
 <script setup>
-import TheNavbar from './components/TheNavbar.vue'
+import FirstCol from './components/FirstCol.vue'
+import SecondCol from './components/SecondCol.vue'
 </script>
+
 
 <template>
   <header>
-    <TheNavbar/>
-  </header>
-  <p>vgvgvgh</p>
-  <h1>ghh</h1>
+  <nav class="navbar navbar-dark navbar-expand-lg">
+    <div class="container col-lg-12 col-md-12">
+      <a class="navbar-brand" href="#"><img src="./assets/img/drupal-coder.svg" width="137" height="20" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">ПОДДЕРЖКА DRUPAL</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              АДМИНИСТРИРОВАНИЕ
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">МИГРАЦИЯ</a></li>
+              <li><a class="dropdown-item" href="#">БЭКАПЫ</a></li>
+              <li><a class="dropdown-item" href="#">АУДИТ БЕЗОПАСНОСТИ</a></li>
+              <li><a class="dropdown-item" href="#">ОПТИМИЗАЦИЯ СКОРОСТИ</a></li>
+              <li><a class="dropdown-item" href="#">ПЕРЕЕЗД НА HTTPS</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ПРОДВИЖЕНИЕ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">РЕКЛАМА</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              О НАС
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">КОМАНДА</a></li>
+              <li><a class="dropdown-item" href="#">DRUPALGIVE</a></li>
+              <li><a class="dropdown-item" href="#">БЛОГ</a></li>
+              <li><a class="dropdown-item" href="#">КУРСЫ DRUPAL</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">ПРОЕКТЫ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">КОНТАКТЫ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+  <div>
+    <div class="block-main">
+      <div class="block-main-background">
+        <video playsinline autoplay="autoplay" loop="" class="fillWidth" preload="auto" muted >
+          <source type="video/mp4" src="./assets/img/video.mp4">
+        </video>
+      </div>
+      <div class="container col-lg-10">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <h1 class="page-title">Поддержка <br> сайтов на Drupal</h1>
+                <div class="support-main-description">
+                    Сопровождение и поддержка сайтов <br>
+                    на CMS Drupal любых версий и запущенности
+                </div>
+                <div class="block-main-wrapper">
+                    <a href="#" class="block-main-btn">Тарифы</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-4">
+                <div class="row support-achievements">
+                    <div class="col-md-4 col-sm-2 col-5 support-achievement">
+                        <div class="support-achievement-wrapper">
+                            <div class="support-achievement-title">#1 <img src="./assets/img/cup.png"></div>
+                            <div class="support-achievement-description">
+                                Drupal-разработчик <br> в России по версии <br> Рейтинга Рунета
+                            </div>
+                        </div>
+                    </div>
+                    <FirstCol title="3+" text="средний опыт специалистов более 3 лет"/>
+                    <FirstCol title="14" text="лет опыта в сфере Drupal"/>
+                    <FirstCol title="200+" text="модулей и тем в формате DrupalGive"/>
+                    <FirstCol title="35 000" text="часов поддержки сайтов на Drupal"/>
+                    <FirstCol title="200+" text="Проектов на поддержке"/>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container2 col-lg-12 col-md-10 col-sm-12">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+      <h1 class="page-title1">13 лет совершенствуем компетенции в Drupal поддержке!</h1>
+      <div class="competency-main-description">
+        Разрабатываем и оптимизируем модули, расширяем функциональность сайтов, обновляем дизайн
+      </div>
+    </div>
+    <SecondCol picture_src='./assets/img/competency-1.svg' text="Добавление информации на сайт, создание новых разделов"/>
+
+        <div class="col-lg-3 col-md-4 col-6 competency-achievement">
+          <div class="competency-achievement-wrapper"><img src="./assets/img/competency-2.svg"></div>
+              <div class="competency-achievement-description">
+                Разработка и оптимизация модулей сайта
+              </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 competency-achievement">
+          <div class="competency-achievement-wrapper"><img src="./assets/img/competency-3.svg"></div>
+              <div class="competency-achievement-description">
+                Интеграция с CRM, 1C, платежными системами, любыми веб-сервисами
+              </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 competency-achievement">
+          <div class="competency-achievement-wrapper"><img src="./assets/img/competency-4.svg"></div>
+              <div class="competency-achievement-description">
+                Любые доработки функционала и дизайна
+              </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 competency-achievement">
+          <div class="competency-achievement-wrapper"><img src="./assets/img/competency-5.svg"></div>
+              <div class="competency-achievement-description">
+                Аудит и мониторинг безопасности Drupal сайтов
+              </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 competency-achievement">
+          <div class="competency-achievement-wrapper"><img src="./assets/img/competency-6.svg"></div>
+              <div class="competency-achievement-description">
+                Миграция, импорт контента и апгрейд Drupal
+              </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 competency-achievement">
+          <div class="competency-achievement-wrapper"><img src="./assets/img/competency-7.svg"></div>
+              <div class="competency-achievement-description">
+                Оптимизация и ускорение Drupal-сайтов
+              </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-5 competency-achievement">
+          <div class="competency-achievement-wrapper"><img src="./assets/img/competency-8.svg"></div>
+              <div class="competency-achievement-description">
+                Оптимизация и ускорение Drupal-сайтов
+              </div>
+        </div>
+      </div>
 </template>
 
 <style>
@@ -393,4 +541,5 @@ video {
   width: 260px;
   max-width: 100%;
 }
+
 </style>
