@@ -6,6 +6,8 @@ import TheNavbar from './components/TheNavbar.vue'
   <header>
     <TheNavbar/>
   </header>
+  <p>vgvgvgh</p>
+  <h1>ghh</h1>
 </template>
 
 <style>
