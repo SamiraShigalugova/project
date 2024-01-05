@@ -4,7 +4,9 @@ import SecondCol from './components/SecondCol.vue'
 import SupBody from './components/SupBody.vue'
 import tar1 from './components/tar1.vue'
 import tar2 from './components/tar2.vue'
-import tar3 from './components/tar3.vue'
+import comp1 from './components/comp1.vue'
+import comp2 from './components/comp2.vue'
+import comp3 from './components/comp3.vue'
 </script>
 
 <template>
@@ -268,12 +270,12 @@ import tar3 from './components/tar3.vue'
                   text4="Неиспользованные оплаченные часы не переносятся"
                   text5="Предоплтата от 30 000 рублей в месяц"
                   textb="Свяжитесь с нами!"></tar2>
-                  <tar3 title="VIP" text1="Консультации и работы по SEO" 
+                  <tar2 title="VIP" text1="Консультации и работы по SEO" 
                   text2="Услуги дизайнера" 
                   text3="Максимальное время реакции - в день обращения" 
                   text4="Неиспользованные оплаченные часы не переносятся"
                   text5="Предоплтата от 270 000 рублей в месяц"
-                  textb="Свяжитесь с нами!"></tar3>
+                  textb="Свяжитесь с нами!"></tar2>
                 </div>
                 </div>
                   <div class="col-xs-12">
@@ -284,6 +286,76 @@ import tar3 from './components/tar3.vue'
                       </div>
                   </div>
                 </div>
+</section>
+  <!-- Блок команда -->
+<section id="block-2">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <h2 class="block-title" >Наши профессиональные разработчики<br>выполняют быстро любые задачи </h2>
+          </div>
+      </div>
+      <div class="row row-flex competencies-row">
+        <comp1 title="От 1ч" text="Настройка события СА в интернет-магазине"></comp1>
+        <comp2 title="От 20ч" text="Разработка мобильной версии сайта"></comp2>
+        <comp3 title="От 8ч" text="Интеграция модуля оплаты"></comp3>
+      </div>
+  </div>
+
+
+
+  <!-- <div class="container">
+  <h2 class="block-title-team">Команда</h2>
+  <div class="form-group">
+      <div class="row">
+              <div class="col-6 col-sm-4">
+                  <div class="user-teaser">
+                      <div class="user-teaser-photo">
+                          <img src="img/IMG_2472_0.jpg" class="img-responsive" />
+                      </div>
+                      <div class="user-teaser-name">Сергей Синица</div>
+                      <div class="user-teaser-post">Руководитель отдела веб-<br>разработки, канд. техн. наук,<br> заместитель директора</div>
+                  </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                  <div class="user-teaser">
+                      <div class="user-teaser-photo">
+                          <img src="img/IMG_2539_0.jpg" class="img-responsive" />
+                      </div>
+                      <div class="user-teaser-name">Роман Агабеков</div>
+                      <div class="user-teaser-post">Руководитель отдела DevOPS,<br> директор</div>
+                  </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                  <div class="user-teaser">
+                      <div class="user-teaser-photo">
+                          <img src="img/IMG_2474_1.jpg" class="img-responsive" />
+                      </div>
+                      <div class="user-teaser-name">Алексей Синица</div>
+                      <div class="user-teaser-post">Руководитель отдела<br> поддержки сайтов</div>
+                  </div></div>
+              <div class="col-6 col-sm-4">
+                  <div class="user-teaser">
+                      <div class="user-teaser-photo">
+                          <img src="img/IMG_2522_0.jpg" class="img-responsive" />
+                      </div>
+                      <div class="user-teaser-name">Дарья Бочкарёва</div>
+                      <div class="user-teaser-post">Руководитель отдела<br>продвижения, контекстной<br>рекламы и контент-поддержки<br>сайтов</div>
+                  </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                  <div class="user-teaser">
+                      <div class="user-teaser-photo">
+                          <img src="img/IMG_9971_16.jpg" class="img-responsive" />
+                      </div>
+                      <div class="user-teaser-name">Ирина Торкунова</div>
+                      <div class="user-teaser-post">Менеджер по работе с<br>клиентами
+                      </div>
+                  </div></div>
+              </div>
+          </div>
+          <button class="btn-team">ВСЯ КОМАНДА</button>
+  </div> -->
 </section>
 </template>
 
