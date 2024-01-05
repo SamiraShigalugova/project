@@ -431,6 +431,17 @@ header {
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
 }
+@keyframes slideup {
+  from {
+    transform: translateY(20%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.dropdown-menu {
+  animation: 1s slideup;
+}
 video {
   display: inline-block;
   vertical-align: baseline;
