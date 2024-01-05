@@ -249,6 +249,79 @@ import SupBody from './components/SupBody.vue'
     </div>
     <div class="expertise-img"><img class="img-responsive" src="./assets/img/laptop.png"></div>
 </div>
+<section id="block-tariffs">
+  <h2 class="block-title">Тарифы</h2>
+  <div>
+      <div class="tariffs">
+          <div class="container">
+              <div class="tar">
+                  <div class="col-lg-4 col-md-12 col-xs-12 col-flex">
+                      <div class="tariff">
+                          <div class="tariff-wrapper">
+                              <div class="tariff-header">
+                                  <div class="tariff-title">Стартовый</div><br>
+                              </div>
+                              <ul class="spisok">
+                                  <li><span>Консультации и работы по SEO<br></span></li>
+                                  <li><span>Услуги дизайнера<br></span></li>
+                                <li><span>Неиспользованные оплаченные часы переносятся на следующий месяц<br></span></li>
+                              <li><span>Предоплтата от 6 000 рублей в месяц<br></span></li></ul>
+                          
+                              <div class="tariff-footer">
+                                  <a href="#forma" class="tar-btn">Свяжитесь с нами!</a>
+                              </div></div>
+                          </div>
+                      </div>
+                  
+                  <div class="col-lg-4 col-md-12 col-flex col-xs-12">
+                      <div class="tariff">
+                          <div class="tariff-wrapper">
+                              <div class="tariff-header">
+                                  <div class="tariff-title">Бизнес</div><br>
+                              </div>
+                              <ul class="spisok">
+                                  <li><span>Консультации и работы по SEO<br></span></li>
+                                <li><span>Услуги дизайнера<br></span></li>
+                              <li><span>Высокое время реакции - до 2 рабочих дней</span></li>
+                              <li><span>Неиспользованные оплаченные часы не переносятся <br></span></li>
+                            <li><span>Предоплтата от 30 000 рублей в месяц<br></span></li></ul>
+                              <div class="tariff-footer">
+                                  <a href="#forma" class="tar-btn">Свяжитесь с нами!</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-12 col-flex col-xs-12">
+                      <div class="tariff">
+                          <div class="tariff-wrapper">
+                              <div class="tariff-header">
+                                  <div class="tariff-title">VIP</div><br>
+                              </div>
+                              <ul class="spisok">
+                                  <li><span>Консультации и работы по SEO<br></span></li>
+                                <li><span>Услуги дизайнера<br></span></li>
+                              <li><span>Максимальное время реакции - в день обращения<br></span></li>
+                              <li><span>Неиспользованные оплаченные часы не переносятся <br></span></li>
+                            <li><span>Предоплтата от 270 000 рублей в месяц<br></span></li></ul>
+                              <div class="tariff-footer">
+                                  <a href="#" class="tar-btn">Свяжитесь с нами!</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                  <div class="col-xs-12">
+                      <div class="tariffs-ps">
+                          Вам не подходят наши тарифы? Оставьте заявку и мы предложим вам индивидуальные
+                          условия!
+                          <a href="#" class="tariffs-link">Получить индивидуальный тариф</a>
+                      </div>
+                  </div>
+          </div>
+      </div>
+</section>
 </template>
 
 <style>
@@ -647,4 +720,755 @@ video {
   max-width: 100%;
 }
 
+@media (max-width: 1092px) {
+  #block-tariffs .block-title {
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  section {
+    display: block;
+  }
+  
+  .tar{display: flex; flex-direction: column;}
+
+  h2 {
+    font-family: inherit;
+    line-height: 1.1;
+    color: inherit;
+    margin-top: 22px;
+    margin-bottom: 11px;
+    font-weight: bold;
+  }
+  .block-title-team{text-align: center;}
+  .spisok{list-style: none;padding: 10px; width: 100%;}
+.spisok li{
+    padding-left: 20px;
+    position: relative;
+    margin: 15px;
+}
+.spisok li:before{
+    content: '\2713';
+    position: absolute; top: 0; left: 0;
+    color: orangered;}
+    #block-tariffs {
+      padding: 60px 0 90px;
+      font-family: "Montserrat", sans-serif;
+      background: url(.src/assets/img/D-background.svg) right top, #fff;
+      background-size: cover;
+    }
+
+    .tariff {
+      height: auto;
+      border-radius: 5px;
+      border: 1px solid #e6e6e6;
+      background: #fff;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 500ms;
+      transform-origin: center;
+      margin-bottom: 30px;
+      width: 350px;
+    }
+    .tariff-row {
+      display: block;
+    }
+    .tariff-row.row-flex {
+      display: flex;
+    }
+    .tariffs-row {
+      display: block;
+    }
+    .tariffs-row.row-flex {
+      display: flex;
+    }
+    .tariff-wrapper {
+      width: 300px;
+      max-width: 100%;
+      margin: 0 auto;
+      height: 100%;
+      position: relative;
+      padding-bottom: 80px;
+    }
+    .tariff-header {
+      border-bottom: 2px solid #e5e5e5;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+    .tariff-title {
+      font-weight: bold;
+      font-size: 22px;
+      color: #f14d32;
+      line-height: 1.3;
+    }
+    .tar-btn {
+      text-decoration: none;
+      display: block;
+      border-radius: 5px;
+      text-transform: uppercase;
+      color: #f14d34;
+      border: 1px solid #f14d34;
+      text-align: center;
+      transition: all 500ms;
+      padding: 20px 10px;
+      line-height: 1;
+      font-size: 12px;
+      font-weight: 500;
+      position: absolute;
+      margin-bottom: 20px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .tariffs-ps {
+      text-align: center;
+      line-height: 1.3;
+      font-weight: 500;
+      color: #828a9b;
+      /* width: 475px; */
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .tariffs-link {
+      display: block;
+      margin-top: 26px;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #050c33;
+      text-decoration: underline;
+      transition: all 300ms;
+    }
+    .tariffs-link:hover {
+      text-decoration: none;
+      color: #f14d32;
+    }
+    .tariffs-row {
+      display: block;
+    }
+    .tariffs-row.row-flex {
+      display: flex;
+    }
+    #block-2 .block-title{margin-left: 10px;}
+    .row-flex {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      flex-direction: column;
+    align-items: center;
+    }
+    .competency-body{text-align: center;}
+    .competency-icon {display: flex;
+      position: relative;
+      margin-bottom: 10px;
+      justify-content: center;
+    }
+    #block-2 .row{--bs-gutter-x: 0rem;}
+    .user-teaser-name {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1.37;
+      color: #050c33;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+    .user-teaser-post {
+      padding: 0;
+      color: #3b3131;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 1.37;
+      margin-bottom: 5px;
+    }
+    .container {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }.form-group{margin: 20px;display: flex;}
+    .img-responsive {
+      vertical-align: middle;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    .user-teaser {
+      text-align: left;
+      margin-bottom: 70px;
+      margin: 10px;
+    }.btn-team{
+      border: 2px solid #696868; 
+      background-color: transparent; 
+      color: #000; 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      cursor: pointer; 
+      margin: 0 auto;
+      display: block;
+      border-radius: 5px;
+  }
+  .btn-team:hover {
+    background-color: #696868; 
+    color: #fff; 
+  }
+    .blog.keys-1 {
+      width: 100%;
+      padding: 0 10px;
+      float: left;
+      margin-bottom: 20px;
+      height: 150px;
+      font-family: "Montserrat", sans-serif;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .blog.keys-1 .keys-content, .blog.keys-1 .keys-img {
+      display: none;
+    }
+    .inverse .blog.keys-1:nth-child(4n+1) .keys-wrapper {
+      background: none !important;
+    }
+    .inverse .blog.keys-1:nth-child(4n+1) .keys-wrapper:before {
+      display: none;
+    }
+    .inverse .blog.keys-1:nth-child(4n+1) .keys-content, .inverse .blog.keys-1:nth-child(4n+1) .keys-img {
+      display: block;
+    }
+    .inverse .blog.keys-1:nth-child(4n+1) .keys-header {
+      margin-top: 40px;
+    }
+    .inverse .blog.keys-1:nth-child(4n+1) .keys-header h2 a {
+      color: #050c33;
+    }
+    .inverse .blog.keys-1:nth-child(4n+1) .keys-date {
+      color: #050c33;
+    }
+    .blog.keys-2 {
+      width: 100%;
+      padding: 0 10px;
+      float: left;
+      margin-bottom: 20px;
+      height: 150px;
+      font-family: "Montserrat", sans-serif;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .link{text-decoration: none;text-align: start;font-size: 12;}
+    
+    .keys-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 10px;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .keys-wrapper:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0) 55.58%);
+      z-index: 5;
+      border-radius: 5px;
+    }
+    .keys-header {
+      margin-top: auto;
+      position: relative;
+      z-index: 10;
+    }
+    .keys-header h2 {display: flex; justify-content: start;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 1.25;
+      margin-bottom: 5px;
+      width: 320px;
+      max-width: 100%;
+    }
+    .keys-header h2 a {
+      color: #fff;
+    }
+    .keys-content {
+      position: relative;
+      z-index: 10;
+      margin-top: 20px;
+      font-weight: 500;
+      font-size: 14px;
+      color: #4e5a73;
+    }
+    .keys-img {
+      position: relative;
+      z-index: 10;
+      height: 50%;
+      background-position: center;
+      background-size: cover;
+      margin-left: -40px;
+      margin-right: -40px;
+      margin-top: -40px;
+      border-radius: 5px;
+      box-sizing: content-box;
+    }
+    .keys-date {
+      color: #fff;
+      opacity: 0.5;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    .btn-case{
+      border: 2px solid #696868; 
+      background-color: transparent; 
+      color: #000; 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      cursor: pointer; 
+      margin: 0 auto;
+      display: block;
+      border-radius: 5px;
+    }
+    .btn-case:hover {
+    background-color: #696868; 
+    color: #fff; 
+    }
+    #block-cases .block-title{text-align: center;}
+    #block-cases .row{--bs-gutter-x: 4rem;display: flex;justify-content: center;}
+}
+
+@media screen and (min-width: 768px){#block-tariffs .tar{display: flex; justify-content: center;align-items: center;}
+
+}
+  
+@media screen and(min-width:1024px){#block-tariffs .tar{display: flex; justify-content: center;align-items: center;
+}}
+
+
+@media screen and (min-width: 1091px){
+  
+
+  #block-2 .row{--bs-gutter-x: 0rem;}
+
+section {
+  display: block;
+}
+
+.tar{display: flex; justify-content: space-evenly; flex-direction: row;}
+
+
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-family: inherit;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 15px;
+  margin-bottom: 11px;
+  font-size: 34px;
+  text-align: center;
+   font-weight: bold;
+}
+
+p {
+  margin: 0 0 11px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.form-group{margin: 20px;}
+.btn-team{width: 20%;
+    border: 2px solid #696868; 
+    background-color: transparent; 
+    color: #000; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+}
+.btn-team:hover {
+  background-color: #696868; 
+  color: #fff; 
+}
+
+
+
+
+.spisok{list-style: none;padding: 10px; width: 100%;}
+.spisok li{
+    padding-left: 20px;
+    position: relative;
+    margin: 15px;
+}
+.spisok li:before{
+    content: '\2713';
+    position: absolute; top: 0; left: 0;
+    color: orangered;}
+
+
+.clearfix:before, .clearfix:after, .container:before, .container:after, .row:before, .row:after{
+  content: " ";
+  display: table;
+}
+.clearfix:after, .container:after, .row:after{
+  clear: both;
+}
+
+.view-team {
+  text-align: center;
+}
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 75px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.row-flex:after, .row-flex:before {
+  width: 0;
+}
+
+#block-tariffs {
+  padding: 60px 0 90px;
+  font-family: "Montserrat", sans-serif;
+  background: url(D-background.svg) no-repeat right top, #fff;
+  background-size: 58%;
+}
+#block-tariffs .block-title {
+  margin-top: 30px;
+  margin-bottom: 65px;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  font-size: 42px;
+}
+
+#block-2 .view-content {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+#block-2 .view-content:after, #block-2 .view-content:before {
+  width: 0;
+}
+#block-2 .views-row {
+  padding: 0 50px;
+}
+
+#block-cases {
+  margin-top: 100px;
+  font-size: 21px;
+}
+#block-cases .view-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+#block-cases .view-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#block-cases .block-title {
+  font-weight: bold;
+  font-size: 42px;
+  margin-bottom: 46px;
+  margin-top: 0;
+  text-align: center;
+  color: #050c33;
+}
+
+
+.tariff {
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 500ms;
+  transform-origin: center;
+  margin-bottom: 30px;
+  width: 350px;
+}
+.tariff-row {
+  display: block;
+}
+.tariff-row.row-flex {
+  display: flex;
+}
+.tariff-wrapper {
+  width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+  padding-bottom: 80px;
+}
+.tariff-header {
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.tariff-title {
+  font-weight: bold;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f14d32;
+  line-height: 1.3;
+}
+.tar-btn {
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #f14d34;
+  border: 1px solid #f14d34;
+  text-align: center;
+  transition: all 500ms;
+  padding: 20px 10px;
+  line-height: 1;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  margin-bottom: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.tar-btn:hover, .tar-btn:active, .tar-btn:focus {
+  text-decoration: none;
+  color: #fff;
+  background: #f14d34;
+}
+.tariff .col-flex:nth-of-type(2n) .tariff {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 4px 60px rgba(162, 162, 162, 0.25);
+}
+.tariff .col-flex:nth-of-type(2n) .tar-btn {
+  color: #fff;
+  background: #f14d34;
+}
+.tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff {
+  transform: initial;
+  box-shadow: none;
+}
+.tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff .tar-btn {
+  color: #f89c91;
+  background: #fff;
+}
+.tariff:hover, .tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff:hover {
+  transform: scale(1.1);
+  z-index: 15;
+  box-shadow: 0 4px 60px rgba(162, 162, 162, 0.25);
+}
+.tariff:hover .tar-btn, .tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff:hover .tar-btn {
+  color: #fff;
+  background: #f14d34;
+}
+.tariffs-ps {
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #828a9b;
+  /* width: 475px; */
+  max-width: 100%;
+  margin: 0 auto;
+}
+.tariffs-link {
+  display: block;
+  margin-top: 26px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #050c33;
+  text-decoration: underline;
+  transition: all 300ms;
+}
+.tariffs-link:hover {
+  text-decoration: none;
+  color: #f14d32;
+}
+.tariffs-row {
+  display: block;
+}
+.tariffs-row.row-flex {
+  display: flex;
+}
+
+
+.user-teaser {
+  text-align: left;
+  margin-bottom: 70px;
+}
+.user-teaser-photo {
+  border-radius: 0;
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 25px;
+}
+.user-teaser-name {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.37;
+  color: #050c33;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.user-teaser-post {
+  padding: 0;
+  color: #505570;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.37;
+  margin-bottom: 5px;
+}
+
+.blog.keys-1 {
+  width: 33.333333%;
+  padding: 0 10px;
+  float: left;
+  margin-bottom: 20px;
+  min-height: 475px;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+  cursor: pointer;
+}
+.blog.keys-1 .keys-content, .blog.keys-1 .keys-img {
+  display: none;
+}
+.inverse .blog.keys-1:nth-child(4n+1) .keys-wrapper {
+  background: none !important;
+}
+.inverse .blog.keys-1:nth-child(4n+1) .keys-wrapper:before {
+  display: none;
+}
+.inverse .blog.keys-1:nth-child(4n+1) .keys-content, .inverse .blog.keys-1:nth-child(4n+1) .keys-img {
+  display: block;
+}
+.inverse .blog.keys-1:nth-child(4n+1) .keys-header {
+  margin-top: 40px;
+}
+.inverse .blog.keys-1:nth-child(4n+1) .keys-header h2 a {
+  color: #050c33;
+}
+.inverse .blog.keys-1:nth-child(4n+1) .keys-date {
+  color: #050c33;
+}
+.blog.keys-2 {
+  width: 66.66666667%;
+  padding: 0 10px;
+  float: left;
+  margin-bottom: 20px;
+  min-height: 475px;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+  cursor: pointer;
+}
+.link{text-decoration: none;text-align: start;}
+
+.keys-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 40px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.keys-wrapper:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0) 55.58%);
+  z-index: 5;
+  border-radius: 5px;
+}
+.keys-header {
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+}
+.keys-header h2 {display: flex; justify-content: start;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.25;
+  margin-bottom: 5px;
+  width: 320px;
+  max-width: 100%;
+}
+.keys-header h2 a {
+  color: #fff;
+}
+.keys-content {
+  position: relative;
+  z-index: 10;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #4e5a73;
+}
+.keys-img {
+  position: relative;
+  z-index: 10;
+  height: 50%;
+  background-position: center;
+  background-size: cover;
+  margin-left: -40px;
+  margin-right: -40px;
+  margin-top: -40px;
+  border-radius: 5px;
+  box-sizing: content-box;
+}
+.keys-date {
+  color: #fff;
+  opacity: 0.5;
+  font-size: 12px;
+  line-height: 1.25;
+}
+.btn-case{width: 20%;
+  border: 2px solid #696868; 
+  background-color: transparent; 
+  color: #000; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+}
+.btn-case:hover {
+background-color: #696868; 
+color: #fff; 
+}
+}
 </style>
