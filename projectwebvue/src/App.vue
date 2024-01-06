@@ -7,6 +7,7 @@ import tar2 from './components/tar2.vue'
 import comp1 from './components/comp1.vue'
 import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
+import team1 from './components/team1.vue'
 </script>
 
 <template>
@@ -304,20 +305,17 @@ import comp3 from './components/comp3.vue'
 
 
 
-  <!-- <div class="container">
+  <div class="container">
   <h2 class="block-title-team">Команда</h2>
   <div class="form-group">
       <div class="row">
-              <div class="col-6 col-sm-4">
-                  <div class="user-teaser">
-                      <div class="user-teaser-photo">
-                          <img src="img/IMG_2472_0.jpg" class="img-responsive" />
-                      </div>
-                      <div class="user-teaser-name">Сергей Синица</div>
-                      <div class="user-teaser-post">Руководитель отдела веб-<br>разработки, канд. техн. наук,<br> заместитель директора</div>
-                  </div>
-              </div>
-              <div class="col-6 col-sm-4">
+        <team1 title1="Сергей Синица" text1="Руководитель отдела веб-разработки, 
+        канд. техн. наук, заместитель директора"
+        title2="Роман Агабеков" text2="Руководитель отдела DevOPS, директор"
+        title3="Алексей Синица" text3="Руководитель отдела поддержки сайтов"
+        title4="Дарья Бочкарёва" text4="Руководитель отдела продвижения, контекстной рекламы и контент-поддержки сайтов"
+        title5="Ирина Торкунова" text5="Менеджер по работе с клиентами"></team1>
+              <!-- <div class="col-6 col-sm-4">
                   <div class="user-teaser">
                       <div class="user-teaser-photo">
                           <img src="img/IMG_2539_0.jpg" class="img-responsive" />
@@ -351,11 +349,11 @@ import comp3 from './components/comp3.vue'
                       <div class="user-teaser-name">Ирина Торкунова</div>
                       <div class="user-teaser-post">Менеджер по работе с<br>клиентами
                       </div>
-                  </div></div>
+                  </div></div> -->
               </div>
           </div>
           <button class="btn-team">ВСЯ КОМАНДА</button>
-  </div> -->
+  </div>
 </section>
 </template>
 
@@ -757,7 +755,7 @@ video {
 
 @media (max-width: 1092px) {
   #block-tariffs .block-title {
-    font-size: 26px;
+    font-size: 35px;
     text-align: center;
     font-weight: bold;
   }
@@ -768,7 +766,7 @@ video {
   
   .tar{display: flex; flex-direction: column;}
 
-  h2 {
+  h2.block-title {
     font-family: inherit;
     line-height: 1.1;
     color: inherit;
@@ -776,7 +774,9 @@ video {
     margin-bottom: 11px;
     font-weight: bold;
   }
-  .block-title-team{text-align: center;}
+  .block-title-team{text-align: center;color: #000000; margin-top: 20px;
+  font-weight: bold;
+  font-size: 36px;}
   .spisok{list-style: none;padding: 10px; width: 100%;}
 .spisok li{
     padding-left: 20px;
@@ -885,7 +885,9 @@ video {
     .tariffs-row.row-flex {
       display: flex;
     }
-    #block-2 .block-title{margin-left: 10px;}
+    #block-2 .block-title{margin-left: 10px;color: #000;
+  font-weight: bold;
+  font-size: 36px;line-height: 1.3;}
     .row-flex {
       display: flex;
       justify-content: center;
@@ -925,7 +927,6 @@ video {
       padding-right: 15px;
     }.form-group{margin: 20px;display: flex;}
     .img-responsive {
-      vertical-align: middle;
       display: block;
       max-width: 100%;
       height: auto;
@@ -1112,7 +1113,7 @@ h2 {
   margin-bottom: 11px;
   font-size: 34px;
   text-align: center;
-   font-weight: bold;
+  font-weight: 700;
 }
 
 p {
@@ -1198,6 +1199,20 @@ p:last-child {
   font-weight: bold;
   font-size: 42px;
 }
+h2.block-title {
+    font-family: inherit;
+    line-height: 1.1;
+    color: inherit;
+    margin-top: 22px;
+    margin-bottom: 11px;
+    font-weight: bold;
+  }
+  .block-title-team{text-align: center;color: #000000; margin-top: 20px;
+  font-weight: bold;
+  font-size: 36px;}
+  #block-2 .block-title{margin-left: 10px;color: #000;
+  font-weight: bold;
+  font-size: 36px;line-height: 1.3;}
 
 #block-2 .view-content {
   display: flex;
