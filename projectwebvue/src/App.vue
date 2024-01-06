@@ -8,6 +8,8 @@ import comp1 from './components/comp1.vue'
 import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
+import cases from './components/cases.vue'
+
 </script>
 
 <template>
@@ -315,44 +317,22 @@ import team1 from './components/team1.vue'
         title3="Алексей Синица" text3="Руководитель отдела поддержки сайтов"
         title4="Дарья Бочкарёва" text4="Руководитель отдела продвижения, контекстной рекламы и контент-поддержки сайтов"
         title5="Ирина Торкунова" text5="Менеджер по работе с клиентами"></team1>
-              <!-- <div class="col-6 col-sm-4">
-                  <div class="user-teaser">
-                      <div class="user-teaser-photo">
-                          <img src="img/IMG_2539_0.jpg" class="img-responsive" />
-                      </div>
-                      <div class="user-teaser-name">Роман Агабеков</div>
-                      <div class="user-teaser-post">Руководитель отдела DevOPS,<br> директор</div>
-                  </div>
-              </div>
-              <div class="col-6 col-sm-4">
-                  <div class="user-teaser">
-                      <div class="user-teaser-photo">
-                          <img src="img/IMG_2474_1.jpg" class="img-responsive" />
-                      </div>
-                      <div class="user-teaser-name">Алексей Синица</div>
-                      <div class="user-teaser-post">Руководитель отдела<br> поддержки сайтов</div>
-                  </div></div>
-              <div class="col-6 col-sm-4">
-                  <div class="user-teaser">
-                      <div class="user-teaser-photo">
-                          <img src="img/IMG_2522_0.jpg" class="img-responsive" />
-                      </div>
-                      <div class="user-teaser-name">Дарья Бочкарёва</div>
-                      <div class="user-teaser-post">Руководитель отдела<br>продвижения, контекстной<br>рекламы и контент-поддержки<br>сайтов</div>
-                  </div>
-              </div>
-              <div class="col-6 col-sm-4">
-                  <div class="user-teaser">
-                      <div class="user-teaser-photo">
-                          <img src="img/IMG_9971_16.jpg" class="img-responsive" />
-                      </div>
-                      <div class="user-teaser-name">Ирина Торкунова</div>
-                      <div class="user-teaser-post">Менеджер по работе с<br>клиентами
-                      </div>
-                  </div></div> -->
               </div>
           </div>
           <button class="btn-team">ВСЯ КОМАНДА</button>
+  </div>
+</section>
+<section id="block-cases">
+  <div class="container">
+  <h2 id="cases" class="block-title">Последние кейсы</h2>
+  <div class="form-group">
+          <div class="row">
+            <cases title="Настройка выгрузки YML для Яндекс.Маркета" text="Эти слова совершенно справедливы, однако гипнотический рифф продолжает паузный пласт." date="22.04.2019"></cases>
+
+
+              
+          </div>
+      </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
 </section>
 </template>
@@ -1003,6 +983,41 @@ video {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      background-image: url(./assets/img/case1.png);
+    }.keys-wrapper2 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 10px;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(./assets/img/case2.png);
+    }
+    .keys-wrapper-prom1 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 10px;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(./assets/img/case3.png);}
+      .keys-wrapper4 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 10px;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(./assets/img/case4.png);
     }
     .keys-wrapper:before {
       content: "";
@@ -1450,7 +1465,41 @@ h2.block-title {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
+  background-image: url(./assets/img/case1.png);
+}.keys-wrapper2 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 40px;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(./assets/img/case2.png);
+    }.keys-wrapper-prom1 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 40px;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(./assets/img/case3.png);}
+      .keys-wrapper4 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 40px;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(./assets/img/case4.png);
+    }
 .keys-wrapper:before {
   content: "";
   display: block;
