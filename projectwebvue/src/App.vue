@@ -336,6 +336,52 @@ import NewForm from './components/NewForm.vue'
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
 </section>
+<div class="fon">
+    <div class="form">
+      <div class="left">
+    <p class="otzuv">
+        Оставьте заявку на поддержку сайта
+    </p>
+    <p class="promo">
+      Срочно нужна поддержка сайта? Ваша команда не успевает самостоятельно справиться или предыдущий подрядчик не справился
+      с работой? Тогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!
+    </p>
+    <p class="tel">📞 8 800 222 -26-73</p>
+    <p class="email">✉️ info@drupal-coder.ru</p>
+  </div>
+      <div class="right">
+          <div class="formel">
+          <input type="text" id="name" v-model="name" placeholder="Введите имя" class="formin" required  />
+        </div>
+        <div class="formel">
+          <input type="email" id="email" v-model="email" placeholder="Введите email" class="formin"  required />
+        </div>
+        <div class="formel">
+          <input type="tel" id="phone" v-model="phone" @input="phoneinput" placeholder="Введите телефон" class="formin" required  />
+        </div>
+        <div class="formel">
+          <textarea id="textarea" v-model="message" class="formin" placeholder="Введите сообщение" required ></textarea>
+        </div>
+        <div class="formel consent-group">
+          <input type="checkbox" id="consent" v-model="consent" required  />
+          <p class="galka">Согласие с обработкой данных</p>
+        </div>
+            <button type="button" @click="formbut" class="orbutton">Отправить</button>
+      </div>
+        </div>
+     </div>
+  <div class="fon1">
+  <div class="line"></div>
+  <div class="social-icons">
+  <i class="fab fa-facebook"></i>
+  <i class="fab fa-twitter"></i>
+  <i class="fab fa-instagram"></i>
+  <i class="fab fa-youtube"></i>
+  <p class="one">Проект ООО "Инитлаб", Краснодар, Россия.  </p>
+  <p class="two">Drupal является зарегестрированной торговой маркой  </p>
+</div>
+</div>
+
 </template>
 
 <style>
@@ -1572,4 +1618,5 @@ background-color: #696868;
 color: #fff; 
 }
 }
+
 </style>
