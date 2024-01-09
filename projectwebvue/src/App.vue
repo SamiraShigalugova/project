@@ -1610,6 +1610,7 @@ h2.block-title {
   font-size: 16px; 
   cursor: pointer; 
   margin: 0 auto;
+  margin-bottom: 20px;
   display: block;
   border-radius: 5px;
 }

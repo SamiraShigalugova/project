@@ -25,7 +25,23 @@ defineProps({
                               <div class="tariff-footer">
                                 <button class = "tarbtn" @click="tarbtn">{{ textb }}</button> <!-- Привязываем функцию openForm к событию клика на кнопке -->
     <form v-if="isFormVisible"> <!-- Отображаем форму, только если значение свойства isFormVisible равно true -->
-      <!-- Ваша форма здесь -->
+        <div class="formel">
+          <input type="text" id="name" v-model="name" placeholder="Введите имя" class="formin" required  />
+        </div>
+        <div class="formel">
+          <input type="email" id="email" v-model="email" placeholder="Введите email" class="formin"  required />
+        </div>
+        <div class="formel">
+          <input type="tel" id="phone" v-model="phone" @input="phoneinput" placeholder="Введите телефон" class="formin" required  />
+        </div>
+        <div class="formel">
+          <textarea id="textarea" v-model="message" class="formin" placeholder="Введите сообщение" required ></textarea>
+        </div>
+        <div class="formel consent-group">
+          <input type="checkbox" id="consent" v-model="consent" required  />
+          <p class="galka">Согласие с обработкой данных</p>
+        </div>
+            <button type="button" @click="formbut" class="orbutton">Отправить</button>
     </form>
   </div>
                               </div></div></div>
