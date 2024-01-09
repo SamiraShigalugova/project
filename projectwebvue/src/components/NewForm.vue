@@ -1,149 +1,135 @@
 <template>
-    <div class="container">
-      <button @click="toggleForm"></button>
-      <transition name="fade">
-        <form v-if="showForm" class="form" :style="formStyles" @click.self="closeForm">
-          <h2>Моя форма</h2>
-          <div>
-            <label for="name">Имя:</label>
-            <input type="text" id="name">
+  <div id="app">
+    <button @click="toggleContactForm" ref="contactBtn" :disabled="formStatus === 'loading'">
+      {{ formStatus === 'loading' ? 'Отправка...' : 'Связь с нами' }}
+    </button>
+    <transition name="fade">
+      <div v-if="showContactForm" class="overlay">
+        <div class="contact-form-container">
+          <div class="contact-form" :style="{ top: `${buttonPosition}px`, height: `${formHeight}px` }">
+            <div class="close-button" @click="closeContactForm">×</div>
+            <h2>Контактная форма</h2>
+            <form @submit.prevent="submitForm">
+              <!--сюда надо сам код формы нашей запихнуть, можно у иры взять  -->
+              <button type="submit" :disabled="formStatus === 'loading'">Отправить</button>
+            </form>
+            <div v-if="formStatus === 'success'" class="success-message">
+              Форма успешно отправлена!
+              <button @click="resetForm">Отправить еще раз</button>
+            </div>
+            <div v-if="formStatus === 'error'" class="error-message">
+              Ошибка при отправке формы. Пожалуйста, попробуйте еще раз.
+              <button @click="resetForm">Попробовать еще раз</button>
+            </div>
           </div>
-          <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email">
-          </div>
-          <button type="submit">Отправить</button>
-        </form>
-      </transition>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        showForm: false, // Переменная для отображения/скрытия формы
-        formHeight: 0, // Высота формы
-      };
+        </div>
+      </div>
+    </transition>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      formHeight: 0,
+    };
+  },
+  computed: {
+    showContactForm() {
+      return this.$store.state.showContactForm;
     },
-    computed: {
-      formStyles() {
-        return {
-          height: `${this.formHeight}px`, // Применяем текущую высоту формы
-        };
-      },
+    buttonPosition() {
+      return this.$store.state.buttonPosition;
     },
-    methods: {
-      toggleForm() {
-        this.showForm = !this.showForm; // Изменяем значение переменной для отображения/скрытия формы
-        if (this.showForm) {
-          setTimeout(() => {
-            this.animateFormOpening();
-          }, 100); // Добавляем небольшую задержку перед началом анимации
-        } else {
-          this.animateFormClosing();
+    formStatus() {
+      return this.$store.state.formStatus;
+    },
+  },
+  methods: {
+    toggleContactForm() {
+      this.$store.dispatch('toggleContactForm');
+      if (this.showContactForm) {
+        this.animateOpenForm();
+      }
+    },
+    closeContactForm() {
+      this.$store.dispatch('closeContactForm');
+    },
+    animateOpenForm() {
+      const startTime = performance.now();
+      const startHeight = 0;
+      const endHeight = 200; // высота формы
+
+      const animate = (currentTime) => {
+        const progress = (currentTime - startTime) / 500; // 500ms для анимации
+        this.formHeight = startHeight + (endHeight - startHeight) * Math.min(progress, 1);
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
         }
-      },
-      animateFormOpening() {
-        // Получаем высоту формы
-        const formElement = document.querySelector('.form');
-        this.formHeight = formElement.scrollHeight;
-  
-        // Анимация открытия формы
-        const start = performance.now();
-        const duration = 500; // Продолжительность анимации в миллисекундах
-  
-        const animate = (timestamp) => {
-          const elapsed = timestamp - start;
-          const progress = elapsed / duration;
-  
-          if (progress >= 1) {
-            formElement.style.height = 100; // Устанавливаем высоту формы в auto, чтобы она могла растягиваться по содержимому
-          } else {
-            formElement.style.height = `${this.formHeight * progress}px`;
-            requestAnimationFrame(animate);
-          }
-        };
-  
-        requestAnimationFrame(animate);
-      },
-      animateFormClosing() {
-        // Анимация закрытия формы
-        const formElement = document.querySelector('.form');
-        const start = performance.now();
-        const duration = 500; // Продолжительность анимации в миллисекундах
-        const initialHeight = formElement.scrollHeight;
-  
-        const animate = (timestamp) => {
-          const elapsed = timestamp - start;
-          const progress = elapsed / duration;
-  
-          if (progress >= 1) {
-            formElement.style.height = 0;
-            this.formHeight = 0;
-          } else {
-            formElement.style.height = `${initialHeight * (1 - progress)}px`;
-            this.formHeight = initialHeight * (1 - progress);
-            requestAnimationFrame(animate);
-          }
-        };
-  
-        requestAnimationFrame(animate);
-      },
-      closeForm() {
-        this.showForm = false; // Закрываем форму при клике вне ее области
-        this.animateFormClosing();
-      },
+      };
+
+      requestAnimationFrame(animate);
     },
-  };
-  </script>
-  
-  <style>
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.5s;
-  }
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .form {
-    overflow: hidden;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 400px;
-    width: 100%;
-  }
-  .form h2 {
-    margin-bottom: 10px;
-  }
-  .form div {
-    margin-bottom: 10px;
-  }
-  .form label {
-    display: block;
-    font-weight: bold;
-  }
-  .form input {
-    width: 100%;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-  }
-  .form button {
-    padding: 10px 20px;
-    background-color: #bb551e;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  </style>
+    submitForm() {
+      this.$store.dispatch('submitForm');
+      // Дополнительная логика после отправки формы
+    },
+    resetForm() {
+      this.$store.dispatch('resetForm');
+      this.formHeight = 0;
+    },
+  },
+};
+</script>
+
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемненный фон */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form-container {
+  position: relative;
+}
+
+.contact-form {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+}
+.success-message,
+.error-message {
+  color: rgb(128, 85, 0); /* Добавьте цвет, который соответствует вашему дизайну */
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
