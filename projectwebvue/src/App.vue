@@ -10,7 +10,6 @@ import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
 import NewForm from './components/NewForm.vue'
-
 </script>
 
 <template>
