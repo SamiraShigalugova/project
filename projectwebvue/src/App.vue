@@ -9,6 +9,7 @@ import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
+import NewForm from './components/NewForm.vue'
 
 </script>
 
@@ -267,6 +268,7 @@ import cases from './components/cases.vue'
                   text3="Неиспользованные оплаченные часы переносятся на следующий месяц" 
                   text4="Предоплтата от 6 000 рублей в месяц"
                   textb="Свяжитесь с нами!"></tar1>
+                  <NewForm/>
                   <tar2 title="Бизнес" text1="Консультации и работы по SEO" 
                   text2="Услуги дизайнера" 
                   text3="Высокое время реакции - до 2 рабочих дней" 
