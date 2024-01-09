@@ -1618,5 +1618,173 @@ background-color: #696868;
 color: #fff; 
 }
 }
+/*Тарифы*/
+.social-icons {
+  margin-top: 20px;
+  padding-left:18%; 
+}
+.two,.one {
+line-height:5px;
+}
+.two{
+  padding-bottom:2%;
+}
+.social-icons i {
+  font-size: 24px; 
+  color: #F14D34; 
+  margin-right: 15px; 
+}
+
+.social-icons i:last-child {
+  margin-right: 0;
+}
+.social-icons i:hover {
+  color: #D43F22; 
+}
+.fon1 {
+  background-color: #090b18;
+ 
+
+}
+.fon {
+  background-color: #090b18;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tel{
+margin-top:100px;
+
+}
+.tel,.email
+{
+  font-size:30px;
+  line-height:10px;
+}
+p
+{
+  color:white;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  
+}
+.form .left {
+  margin-left: 10%; 
+}
+.left {
+  width: 480px; 
+}
+
+.right {
+  width: calc(100% - 100px); 
+  max-width: 400px;
+  padding: 20px 0; 
+  box-sizing: border-box;
+}
+
+.formel {
+  margin-bottom: 15px;
+}
+
+label {
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formin {
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  background-color: #090b18;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  height: 50px;
+}
+
+textarea.formin {
+  resize: vertical;
+  border-radius: 3px;
+  height: 100px; 
+}
+
+.orbutton {
+  width: 100%;
+  height:45px;
+  padding: 10px;
+  background-color: #F14D34; ;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.consent-group {
+  display: flex;
+  align-items: center;
+}
+
+.galka {
+  margin-left: 5px;
+  color: white;
+}
+
+.otzuv {
+  color: white;
+  margin-bottom: 5px;
+  font-size:40px;
+}
+.line {
+    background-color: gray;
+    height: 2px;
+    width: 100%;
+  }
+  @media only screen and (max-width: 768px) {
+    template{
+      max-width: 100%;
+    overflow-x: hidden;
+  }
+    .form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .left {
+    width: 100%;
+    margin-left: 0;
+   
+  }
+
+  .right {
+    width: 100%;
+    max-width: none;
+    padding: 10px;
+  }
+
+  .formin,
+  textarea.formin {
+    height: 40px;
+  }
+
+  .consent-group {
+    flex-direction: column;
+  }
+
+  .orbutton {
+    height: 40px;
+  }
+
+  .social-icons {
+    padding-left: 10%;
+  }
+  .otzuv, .promo {
+    padding-right: 50px; }
+ 
+}
 
 </style>
