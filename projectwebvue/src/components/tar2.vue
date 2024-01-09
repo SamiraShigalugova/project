@@ -24,8 +24,24 @@ defineProps({
                               <li><span>{{ text4 }}<br></span></li>
                               <li><span>{{ text5 }}<br></span></li></ul>
                               <div class="tariff-footer">
-                                  <a href="#forma" class="tar-btn">{{ textb }}</a>
+                                <button class = "tarbtn" @click="tarbtn">{{ textb }}</button> <!-- Привязываем функцию openForm к событию клика на кнопке -->
+    <form v-if="isFormVisible"> <!-- Отображаем форму, только если значение свойства isFormVisible равно true -->
+      <!-- Ваша форма здесь --></form>
                               </div></div>
                           </div>
                       </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      isFormVisible: false // Определяем свойство isFormVisible со значением false
+    }
+  },
+  methods: {
+    tarbtn() {
+      this.isFormVisible = true; // Устанавливаем значение свойства isFormVisible в true при клике на кнопке
+    }
+  }
+}
+</script>

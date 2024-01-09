@@ -7,7 +7,7 @@ export default createStore({
     formStatus: 'idle', // 'idle', 'loading', 'success', 'error'
   },
   mutations: {
-    toggleContactForm(state) {
+    tarbtn(state) {
       state.showContactForm = !state.showContactForm;
       if (state.showContactForm) {
         state.buttonPosition = state.buttonPosition + 10;
@@ -25,8 +25,8 @@ export default createStore({
     },
   },
   actions: {
-    toggleContactForm({ commit }) {
-      commit('toggleContactForm');
+    tarbtn({ commit }) {
+      commit('tarbtn');
     },
     closeContactForm({ commit }) {
       commit('closeContactForm');
