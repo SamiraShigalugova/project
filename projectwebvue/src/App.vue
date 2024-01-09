@@ -1783,6 +1783,11 @@ textarea.formin {
   }
   .otzuv, .promo {
     padding-right: 50px; }
+
+    html, body {
+overflow-x: hidden;
+}
+     
  
 }
 
