@@ -11,6 +11,7 @@ import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
 import NewForm from './components/NewForm.vue'
 
+
 </script>
 
 <template>
@@ -305,9 +306,6 @@ import NewForm from './components/NewForm.vue'
         <comp3 title="От 8ч" text="Интеграция модуля оплаты"></comp3>
       </div>
   </div>
-
-
-
   <div class="container">
   <h2 class="block-title-team">Команда</h2>
   <div class="form-group">
@@ -329,9 +327,7 @@ import NewForm from './components/NewForm.vue'
   <div class="form-group">
           <div class="row">
             <cases title="Настройка выгрузки YML для Яндекс.Маркета" text="Эти слова совершенно справедливы, однако гипнотический рифф продолжает паузный пласт." date="22.04.2019"></cases>
-
-
-              
+          
 </div>
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
@@ -1785,6 +1781,11 @@ textarea.formin {
   }
   .otzuv, .promo {
     padding-right: 50px; }
+
+    html, body {
+overflow-x: hidden;
+}
+     
  
 }
 
