@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <button @click="toggleContactForm" ref="contactBtn" :disabled="formStatus === 'loading'">
+    <button @click="tarbtn" ref="tarbtn" :disabled="formStatus === 'loading'">
       {{ formStatus === 'loading' ? 'Отправка...' : 'Связь с нами' }}
     </button>
     <transition name="fade">
@@ -47,8 +47,8 @@ export default {
     },
   },
   methods: {
-    toggleContactForm() {
-      this.$store.dispatch('toggleContactForm');
+    tarbtn() {
+      this.$store.dispatch('tarbtn');
       if (this.showContactForm) {
         this.animateOpenForm();
       }

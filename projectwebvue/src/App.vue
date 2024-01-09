@@ -268,7 +268,6 @@ import NewForm from './components/NewForm.vue'
                   text3="Неиспользованные оплаченные часы переносятся на следующий месяц" 
                   text4="Предоплтата от 6 000 рублей в месяц"
                   textb="Свяжитесь с нами!"></tar1>
-                  <NewForm/>
                   <tar2 title="Бизнес" text1="Консультации и работы по SEO" 
                   text2="Услуги дизайнера" 
                   text3="Высокое время реакции - до 2 рабочих дней" 
@@ -333,7 +332,7 @@ import NewForm from './components/NewForm.vue'
 
 
               
-          </div>
+</div>
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
 </section>
@@ -820,11 +819,11 @@ video {
       color: #f14d32;
       line-height: 1.3;
     }
-    .tar-btn {
-      text-decoration: none;
+    .tarbtn {
+  text-decoration: none;
       display: block;
-      border-radius: 5px;
-      text-transform: uppercase;
+    border-radius: 5px;
+  text-transform: uppercase;
       color: #f14d34;
       border: 1px solid #f14d34;
       text-align: center;
@@ -839,7 +838,7 @@ video {
       right: 0;
       bottom: 0;
     }
-    .tariffs-ps {
+        .tariffs-ps {
       text-align: center;
       line-height: 1.3;
       font-weight: 500;
@@ -1306,7 +1305,7 @@ h2.block-title {
   color: #f14d32;
   line-height: 1.3;
 }
-.tar-btn {
+.tarbtn {
   text-decoration: none;
   display: block;
   border-radius: 5px;
@@ -1324,8 +1323,9 @@ h2.block-title {
   left: 0;
   right: 0;
   bottom: 0;
-}
-.tar-btn:hover, .tar-btn:active, .tar-btn:focus {
+  background-color: white;
+  }
+.tarbtn:hover, .tarbtn:active, .tarbtn:focus {
   text-decoration: none;
   color: #fff;
   background: #f14d34;
@@ -1335,7 +1335,7 @@ h2.block-title {
   z-index: 10;
   box-shadow: 0 4px 60px rgba(162, 162, 162, 0.25);
 }
-.tariff .col-flex:nth-of-type(2n) .tar-btn {
+.tariff .col-flex:nth-of-type(2n) .tarbtn {
   color: #fff;
   background: #f14d34;
 }
@@ -1343,7 +1343,7 @@ h2.block-title {
   transform: initial;
   box-shadow: none;
 }
-.tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff .tar-btn {
+.tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff .tarbtn {
   color: #f89c91;
   background: #fff;
 }
@@ -1352,7 +1352,7 @@ h2.block-title {
   z-index: 15;
   box-shadow: 0 4px 60px rgba(162, 162, 162, 0.25);
 }
-.tariff:hover .tar-btn, .tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff:hover .tar-btn {
+.tariff:hover .tarbtn, .tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff:hover .tarbtn {
   color: #fff;
   background: #f14d34;
 }
