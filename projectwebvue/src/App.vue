@@ -105,7 +105,26 @@ export default {
       active(index) {
               return this.activeIndexes.includes(index);
       }
-    }
+    },
+    components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      const prev = ref(null);
+      const next = ref(null);
+      const fraction = ref(null);
+      return {
+        modules: [Autoplay, Pagination, Navigation],
+        prev,
+        next,
+        fraction
+      };
+    },
+   
+    
+  
+
   };
 
 </script>
