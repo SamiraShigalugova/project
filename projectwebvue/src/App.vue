@@ -11,7 +11,7 @@ import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
-import NewForm from './components/NewForm.vue'
+import tar3 from './components/tar3.vue'
 </script>
 
 <script>
@@ -331,12 +331,12 @@ export default {
                   text4="Неиспользованные оплаченные часы не переносятся"
                   text5="Предоплтата от 30 000 рублей в месяц"
                   textb="Свяжитесь с нами!"></tar2>
-                  <tar2 title="VIP" text1="Консультации и работы по SEO" 
+                  <tar3 title="VIP" text1="Консультации и работы по SEO" 
                   text2="Услуги дизайнера" 
                   text3="Максимальное время реакции - в день обращения" 
                   text4="Неиспользованные оплаченные часы не переносятся"
                   text5="Предоплтата от 270 000 рублей в месяц"
-                  textb="Свяжитесь с нами!"></tar2>
+                  textb="Свяжитесь с нами!"></tar3>
                 </div>
                 </div>
                   <div class="col-xs-12">
@@ -931,7 +931,7 @@ video {
       color: #f14d32;
       line-height: 1.3;
     }
-    .tarbtn {
+    .tarbtn, .tarbtn1,.tarbtn12 {
   text-decoration: none;
       display: block;
     border-radius: 5px;
@@ -949,6 +949,7 @@ video {
       left: 0;
       right: 0;
       bottom: 0;
+      background-color: white
     }
         .tariffs-ps {
       text-align: center;
@@ -1417,7 +1418,7 @@ h2.block-title {
   color: #f14d32;
   line-height: 1.3;
 }
-.tarbtn {
+.tarbtn,.tarbtn1,.tarbtn12 {
   text-decoration: none;
   display: block;
   border-radius: 5px;
@@ -1437,7 +1438,7 @@ h2.block-title {
   bottom: 0;
   background-color: white;
   }
-.tarbtn:hover, .tarbtn:active, .tarbtn:focus {
+.tarbtn:hover, .tarbtn:active, .tarbtn:focus, .tarbtn1:hover, .tarbtn1:active, .tarbtn1:focus,.tarbtn12:hover, .tarbtn12:active, .tarbtn12:focus {
   text-decoration: none;
   color: #fff;
   background: #f14d34;
