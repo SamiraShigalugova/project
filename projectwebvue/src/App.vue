@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+
 <script setup>
 import FirstCol from './components/FirstCol.vue'
 import SecondCol from './components/SecondCol.vue'
@@ -10,8 +12,62 @@ import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
 import NewForm from './components/NewForm.vue'
+</script>
 
+<script>
+export default {
+  data() {
+    return {
+      phone: '',
+      name: '',
+      email: '',
+    message: '',
+    consent: false,
+        };
+  },
+  methods: {
+    phoneinput() {
+   this.phone = this.phone.replace(/\D/g, '');
+    },
+    formbut() {
+       if (!this.name || !this.email || !this.phone || !this.message || !this.consent) {
+      alert('Пожалуйста заполните все поля');
+      return;
+    }
+      localStorage.setItem('formValues', JSON.stringify({
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        message: this.message,
+        consent: this.consent
+      }));
+      this.sendFormData();
+      this.name = '';
+      this.email = '';
+      this.phone = '';
+      this.message = '';
+      this.consent = false;
+      alert('Данные успешно отправлены!');
+    },
+    sendFormData() {
+        const formData = {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        message: this.message,
+        consent: this.consent
+      };
+      fetch('https://formcarry.com/s/jpXL8tnTne', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
+    },
+  }
+};
 </script>
 
 <template>
