@@ -422,7 +422,7 @@ export default {
 </section>
 <!--FAQ-->
 <div>
-     <center> <h2>FAQ </h2></center>
+     <center> <h2>FAQ GFNERJKGNJEGNJKENJGK </h2></center>
           <div id="faq" v-if="show">
         <div v-for="(item, index) in items" :key="index" class="item" @click="answer(index)" :class="{ 'active': active(index) }">
           <div class="content" :class="{ 'active': active(index) }">
