@@ -388,6 +388,19 @@ export default {
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
 </section>
+<!--FAQ-->
+<div>
+     <center> <h2>FAQ </h2></center>
+          <div id="faq" v-if="show">
+        <div v-for="(item, index) in items" :key="index" class="item" @click="answer(index)" :class="{ 'active': active(index) }">
+          <div class="content" :class="{ 'active': active(index) }">
+            <span class="question">{{ item.question }}</span>
+            <div v-if="active(index)">{{ item.answer }}</div>
+          </div>
+        </div>
+      </div>
+      <router-view/>
+    </div>
 <div class="fon">
     <div class="form">
       <div class="left">
@@ -433,6 +446,7 @@ export default {
   <p class="two">Drupal является зарегестрированной торговой маркой  </p>
 </div>
 </div>
+
 
 </template>
 
