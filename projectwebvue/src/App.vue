@@ -420,9 +420,10 @@ export default {
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
 </section>
+
 <!--FAQ-->
 <div>
-     <center> <h2>FAQ GFNERJKGNJEGNJKENJGK </h2></center>
+     <center> <h2>FAQ hrlhmklrmhklrmnlk </h2></center>
           <div id="faq" v-if="show">
         <div v-for="(item, index) in items" :key="index" class="item" @click="answer(index)" :class="{ 'active': active(index) }">
           <div class="content" :class="{ 'active': active(index) }">
