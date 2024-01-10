@@ -1810,6 +1810,39 @@ textarea.formin {
     height: 2px;
     width: 100%;
   }
+  /*FAQ */
+  #faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   
+  .item {
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 60%; 
+   
+  }
+  .question {
+    font-weight: bold; 
+  }
+  .content {
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    text-align: left; 
+    transition: background-color 0.3s; 
+  }
+   
+  .content:hover {
+    background-color: #f0f0f0; 
+  }
+   
+  .content.active {
+    border-color: red; 
+    background-color: #ffffff; 
+  }
+  
+  
   @media only screen and (max-width: 768px) {
     template{
       max-width: 100%;
