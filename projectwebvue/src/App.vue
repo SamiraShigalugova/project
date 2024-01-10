@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
 
 <script setup>
 import FirstCol from './components/FirstCol.vue'
@@ -23,6 +22,7 @@ import NewForm from './components/NewForm.vue'
 </script>
 
 <script>
+
 export default {
   data() {
     return {
@@ -1998,6 +1998,152 @@ overflow-x: hidden;
 }
      
  
+}
+/*ГАЛЕРЕЯ*/
+body {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.maincont {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.description {
+  color: var(--main-black, #050C33);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  opacity: 0.7;
+}
+
+.works_card .description {
+  max-width: 740px;
+  margin: 0 auto 42px;
+}
+
+.works_card .titler {
+  margin-bottom: 10px;
+  margin-top: 160px;
+}
+
+.works_card_slider {
+  overflow: visible;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.works_card_slider:last-child {
+  margin-bottom: 160px;
+}
+
+.works_card_slider .swiper-wrapper{
+  transition-timing-function:linear;
+}
+
+.works_card_slider .swiper-slide {
+  border-radius: 5px;
+  border: 1px solid #E5E5E5;
+  cursor: pointer;
+  width: 291px;
+}
+
+.works_card_slider .swiper-slide .cards {
+  height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper_btns{
+  width: 206px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-fraction {
+  width: auto;
+  text-align: center;
+}
+
+.swiper-pagination-fraction span {
+  font-family: 'Montserrat',sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.swiper-wrapper {
+  padding: 5px;
+}
+
+.comment_right {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-button-prev {
+  position: absolute;
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+.swiper-button-next::after {
+  display: none;
+}
+
+.comment_container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.titler {
+  color: #050C33;
+  text-align: center;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-top: 60px;
+  margin-bottom: 46px;
+}
+
+@media only screen and (max-width: 992px) {
+  .comment {
+    padding: 30px;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0px 20px;
+  }
+
+  .maincont {
+    padding: 0 20px;
+  }
+
+  .titler {
+    margin-top: 30px;
+    padding-top: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
 }
 
 </style>
