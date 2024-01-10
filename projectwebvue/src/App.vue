@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
 
 <script setup>
 import FirstCol from './components/FirstCol.vue'
@@ -11,10 +10,23 @@ import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
+<<<<<<< HEAD
 import tar3 from './components/tar3.vue'
+=======
+import { ref } from 'vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+  import 'swiper/css/navigation';
+  import 'swiper/css';
+
+import NewForm from './components/NewForm.vue'
+>>>>>>> bb3f52a41b04dce56143dbe224df5b2abf147c8f
 </script>
 
 <script>
+
 export default {
   data() {
     return {
@@ -64,10 +76,61 @@ export default {
         },
         body: JSON.stringify(formData),
       })
-
     },
-  }
-};
+  },
+  data() {
+      return {
+        show: true,
+        activeIndexes: [],
+        items: [
+          { question: '1.Кто непосредственно занимается поддержкой?', 
+          answer: 'Поддержка и обслуживание включают в себя команду  программистов и дизайнеров. Эти специалисты отвечают за техническую поддержку, обновления модели, улучшение ее функциональности и обеспечение безопасности и этичности использования.' },
+          { question: '2. Как организована работа поддержки?', answer: 'Мы организовали структуру поддержки и обслуживания для своих моделей и продуктов. В общих чертах эта организация включает в себя следующие аспекты: техническая поддержка, обратная связь от пользователей и специалисты по безопасности' },
+          { question: '3.Что происходит когда отработаны все предоплачнные часы за месяц?', answer: 'Если все цели или задачи выполнены, работник может ожидать выплаты в соответствии с условиями соглашения илиработник может предоставить заказчику результат своей работы и договориться о дополнительных задачах или продлении срока работы.' },
+          { question: '4.Что происходит, когда не отработаны все предоплаченные часы за месяц?', answer: 'Если речь идет о предоплате за услуги или работу,то будет предусмотрен возврат непотраченных средств или перерасчет по фактически отработанным часам' },
+          { question: '5.Как происходит оценка и согласование планируемого времени на выполнение заявок?', answer: 'Мы определяем задачи и требования, которые предъявляются к выполнению заявки. Рассматриваем зависимости между различными этапами работы и ресурсами, привлекаем экспертов и определяем необходимые ресурсы' },
+          { question: '6.Сколько программистов выделяется на проект?', answer: 'Количество программистов, выделяемых на проект, может значительно варьироваться в зависимости от размеров проекта, его сложности, сроков выполнения, используемых технологий и других факторов.В среднем над проектом работают от 2 до 3 человек.' },
+          { question: '7.Как подать заявку на внесение изменений на сайте?', answer: 'Связаться с нами по контакным данным, указать нужную информацию в заявке, далее подождать процесс рассмотрения и указать время и сроки' },
+          { question: '8.Как подать заявку на добавление пользователя, изменение настроек веб-сервера и других задач по администрированию?', answer: 'Свяжитесь с администратором, укажите информацию в заявку и подтвердите заявку. Ждите обратной связи' },
+          { question: '9.В течение какого времени начинается работа по заявке?', answer: 'Обычно мы стремимся начать работу по заявке в течение 1-2 рабочих дней с момента ее получения' },
+          { question: '10.В какое время работает поддержка?', answer: 'График работы службы поддержки зависит от политики нашей организации. Обычно мы предоставляем поддержку с 9:00 до 18:00 по МСК с понедельника по пятницу. Пожалуйста, проверьте наш официальный веб-сайт или свяжитесь с нами по форме ниже для получения актуальной информации о времени работы поддержки' },
+                ]
+      };
+    },
+    methods: {
+      answer(index) {
+        const active = this.active(index);
+        if (active) {
+             this.activeIndexes = this.activeIndexes.filter(i => i !== index);
+        } else {
+                   this.activeIndexes.push(index);
+        }
+      },
+      active(index) {
+              return this.activeIndexes.includes(index);
+      }
+    },
+    components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      const prev = ref(null);
+      const next = ref(null);
+      const fraction = ref(null);
+      return {
+        modules: [Autoplay, Pagination, Navigation],
+        prev,
+        next,
+        fraction
+      };
+    },
+   
+    
+  
+
+  };
+
 </script>
 
 <template>
@@ -388,9 +451,78 @@ export default {
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
 </section>
+<div class="wrapper">
+
+  
+<section class="works_card">
+  <div class="maincont">
+    <h2 class="titler">С нами работают</h2>
+    <p class="description">Десятки компаний доверяют нам самое ценное, что у них есть в интернете – свои сайты. Мы делаем всё, чтобы наше сотрудничество было долгим.</p>
+    <swiper
+      :slidesPerView="'auto'"
+      :loop="true"
+      :spaceBetween="20"
+      :centeredSlides="true"
+      :speed="3000"
+      :autoplay="{
+        delay: 0,
+      }"
+      :modules="modules"
+      class="works_card_slider"
+    >
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+    </swiper>
+    <swiper
+      :slidesPerView="'auto'"
+      :loop="true"
+      :centered-slides="true"
+      :spaceBetween="20"
+      :centeredSlides="true"
+      :speed="3000"
+      :autoplay="{
+        delay: 0,
+        reverseDirection: true,
+      }"
+      :modules="modules"
+      class="works_card_slider"
+    >
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+    </swiper>
+  </div>
+</section>
+</div>
+
 <!--FAQ-->
 <div>
-     <center> <h2>FAQ </h2></center>
+     <center> <h2>FAQ hrlhmklrmhklrmnlk </h2></center>
           <div id="faq" v-if="show">
         <div v-for="(item, index) in items" :key="index" class="item" @click="answer(index)" :class="{ 'active': active(index) }">
           <div class="content" :class="{ 'active': active(index) }">
@@ -1891,6 +2023,152 @@ overflow-x: hidden;
 }
      
  
+}
+/*ГАЛЕРЕЯ*/
+body {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.maincont {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.description {
+  color: var(--main-black, #050C33);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  opacity: 0.7;
+}
+
+.works_card .description {
+  max-width: 740px;
+  margin: 0 auto 42px;
+}
+
+.works_card .titler {
+  margin-bottom: 10px;
+  margin-top: 160px;
+}
+
+.works_card_slider {
+  overflow: visible;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.works_card_slider:last-child {
+  margin-bottom: 160px;
+}
+
+.works_card_slider .swiper-wrapper{
+  transition-timing-function:linear;
+}
+
+.works_card_slider .swiper-slide {
+  border-radius: 5px;
+  border: 1px solid #E5E5E5;
+  cursor: pointer;
+  width: 291px;
+}
+
+.works_card_slider .swiper-slide .cards {
+  height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper_btns{
+  width: 206px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-fraction {
+  width: auto;
+  text-align: center;
+}
+
+.swiper-pagination-fraction span {
+  font-family: 'Montserrat',sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.swiper-wrapper {
+  padding: 5px;
+}
+
+.comment_right {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-button-prev {
+  position: absolute;
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+.swiper-button-next::after {
+  display: none;
+}
+
+.comment_container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.titler {
+  color: #050C33;
+  text-align: center;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-top: 60px;
+  margin-bottom: 46px;
+}
+
+@media only screen and (max-width: 992px) {
+  .comment {
+    padding: 30px;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0px 20px;
+  }
+
+  .maincont {
+    padding: 0 20px;
+  }
+
+  .titler {
+    margin-top: 30px;
+    padding-top: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
 }
 
 </style>
