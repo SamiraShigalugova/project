@@ -64,10 +64,11 @@ export default {
         },
         body: JSON.stringify(formData),
       })
-
     },
-  }
-}
+  },
+
+  };
+
 </script>
 
 <template>
