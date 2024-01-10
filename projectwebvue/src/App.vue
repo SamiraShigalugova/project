@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+
 <script setup>
 import FirstCol from './components/FirstCol.vue'
 import SecondCol from './components/SecondCol.vue'
@@ -10,8 +12,62 @@ import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
 import NewForm from './components/NewForm.vue'
+</script>
 
+<script>
+export default {
+  data() {
+    return {
+      phone: '',
+      name: '',
+      email: '',
+    message: '',
+    consent: false,
+        };
+  },
+  methods: {
+    phoneinput() {
+   this.phone = this.phone.replace(/\D/g, '');
+    },
+    formbut() {
+       if (!this.name || !this.email || !this.phone || !this.message || !this.consent) {
+      alert('Пожалуйста заполните все поля');
+      return;
+    }
+      localStorage.setItem('formValues', JSON.stringify({
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        message: this.message,
+        consent: this.consent
+      }));
+      this.sendFormData();
+      this.name = '';
+      this.email = '';
+      this.phone = '';
+      this.message = '';
+      this.consent = false;
+      alert('Данные успешно отправлены!');
+    },
+    sendFormData() {
+        const formData = {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        message: this.message,
+        consent: this.consent
+      };
+      fetch('https://formcarry.com/s/jpXL8tnTne', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
+    },
+  }
+};
 </script>
 
 <template>
@@ -332,6 +388,19 @@ import NewForm from './components/NewForm.vue'
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
 </section>
+<!--FAQ-->
+<div>
+     <center> <h2>FAQ </h2></center>
+          <div id="faq" v-if="show">
+        <div v-for="(item, index) in items" :key="index" class="item" @click="answer(index)" :class="{ 'active': active(index) }">
+          <div class="content" :class="{ 'active': active(index) }">
+            <span class="question">{{ item.question }}</span>
+            <div v-if="active(index)">{{ item.answer }}</div>
+          </div>
+        </div>
+      </div>
+      <router-view/>
+    </div>
 <div class="fon">
     <div class="form">
       <div class="left">
@@ -377,6 +446,7 @@ import NewForm from './components/NewForm.vue'
   <p class="two">Drupal является зарегестрированной торговой маркой  </p>
 </div>
 </div>
+
 
 </template>
 
@@ -1741,6 +1811,39 @@ textarea.formin {
     height: 2px;
     width: 100%;
   }
+  /*FAQ */
+  #faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   
+  .item {
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 60%; 
+   
+  }
+  .question {
+    font-weight: bold; 
+  }
+  .content {
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    text-align: left; 
+    transition: background-color 0.3s; 
+  }
+   
+  .content:hover {
+    background-color: #f0f0f0; 
+  }
+   
+  .content.active {
+    border-color: red; 
+    background-color: #ffffff; 
+  }
+  
+  
   @media only screen and (max-width: 768px) {
     template{
       max-width: 100%;
