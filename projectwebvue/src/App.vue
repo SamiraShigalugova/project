@@ -11,6 +11,14 @@ import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
+import { ref } from 'vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+  import 'swiper/css/navigation';
+  import 'swiper/css';
+
 import NewForm from './components/NewForm.vue'
 </script>
 
@@ -420,6 +428,74 @@ export default {
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
 </section>
+<div class="wrapper">
+
+  
+<section class="works_card">
+  <div class="maincont">
+    <h2 class="titler">С нами работают</h2>
+    <p class="description">Десятки компаний доверяют нам самое ценное, что у них есть в интернете – свои сайты. Мы делаем всё, чтобы наше сотрудничество было долгим.</p>
+    <swiper
+      :slidesPerView="'auto'"
+      :loop="true"
+      :spaceBetween="20"
+      :centeredSlides="true"
+      :speed="3000"
+      :autoplay="{
+        delay: 0,
+      }"
+      :modules="modules"
+      class="works_card_slider"
+    >
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+    </swiper>
+    <swiper
+      :slidesPerView="'auto'"
+      :loop="true"
+      :centered-slides="true"
+      :spaceBetween="20"
+      :centeredSlides="true"
+      :speed="3000"
+      :autoplay="{
+        delay: 0,
+        reverseDirection: true,
+      }"
+      :modules="modules"
+      class="works_card_slider"
+    >
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide v-for="i in 4" :key="i">
+        <div class="cards">
+          <img :src="require(`@/assets/works_card_${i}.svg`)" alt="">
+        </div>
+      </swiper-slide>
+    </swiper>
+  </div>
+</section>
+</div>
 
 <!--FAQ-->
 <div>
