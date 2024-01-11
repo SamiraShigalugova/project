@@ -1,4 +1,3 @@
-
 <script>
 import FirstCol from './components/FirstCol.vue'
 import SecondCol from './components/SecondCol.vue'
@@ -9,9 +8,8 @@ import comp1 from './components/comp1.vue'
 import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
-import cases from './components/cases.vue'
-<<<<<<< HEAD
 import Comment from './components/Comment.vue'
+import tar3 from './components/tar3.vue'
 import { ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -20,17 +18,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css';
-
-import NewForm from './components/NewForm.vue'
-
-=======
-import tar3 from './components/tar3.vue'
+import Cases from './components/cases.vue'
 
 
-</script>
-
-<script>
->>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7
 export default {
   data() {
     return {
@@ -112,10 +102,14 @@ export default {
     }
   },
   components: {
-      Swiper,
-      SwiperSlide,
-      Comment
-    },
+    Swiper,
+    SwiperSlide,
+    Comment,
+    Cases,
+    FirstCol,
+    comp1, comp2, comp3, SecondCol, SupBody, tar1, tar2, tar3, team1
+
+},
     setup() {
       const prev = ref(null);
       const next = ref(null);
@@ -393,12 +387,12 @@ export default {
                   text4="Неиспользованные оплаченные часы не переносятся"
                   text5="Предоплтата от 30 000 рублей в месяц"
                   textb="Свяжитесь с нами!"></tar2>
-                  <tar2 title="VIP" text1="Консультации и работы по SEO" 
+                  <tar3 title="VIP" text1="Консультации и работы по SEO" 
                   text2="Услуги дизайнера" 
                   text3="Максимальное время реакции - в день обращения" 
                   text4="Неиспользованные оплаченные часы не переносятся"
                   text5="Предоплтата от 270 000 рублей в месяц"
-                  textb="Свяжитесь с нами!"></tar2>
+                  textb="Свяжитесь с нами!"></tar3>
                 </div>
                 </div>
                   <div class="col-xs-12">
@@ -444,7 +438,7 @@ export default {
   <h2 id="cases" class="block-title">Последние кейсы</h2>
   <div class="form-group">
           <div class="row">
-            <cases title="Настройка выгрузки YML для Яндекс.Маркета" text="Эти слова совершенно справедливы, однако гипнотический рифф продолжает паузный пласт." date="22.04.2019"></cases>
+            <Cases title="Настройка выгрузки YML для Яндекс.Маркета" text="Эти слова совершенно справедливы, однако гипнотический рифф продолжает паузный пласт." date="22.04.2019"></cases>
           
 </div>
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
@@ -1098,7 +1092,7 @@ video {
       color: #f14d32;
       line-height: 1.3;
     }
-    .tarbtn {
+    .tarbtn, .tarbtn1, .tarbtn12 {
   text-decoration: none;
       display: block;
     border-radius: 5px;
@@ -1584,7 +1578,7 @@ h2.block-title {
   color: #f14d32;
   line-height: 1.3;
 }
-.tarbtn {
+.tarbtn, .tarbtn1, .tarbtn12 {
   text-decoration: none;
   display: block;
   border-radius: 5px;
@@ -1604,7 +1598,9 @@ h2.block-title {
   bottom: 0;
   background-color: white;
   }
-.tarbtn:hover, .tarbtn:active, .tarbtn:focus {
+.tarbtn:hover, .tarbtn:active, .tarbtn:focus,
+.tarbtn1:hover, .tarbtn1:active, .tarbtn1:focus,
+.tarbtn12:hover, .tarbtn12:active, .tarbtn12:focus {
   text-decoration: none;
   color: #fff;
   background: #f14d34;
@@ -1614,7 +1610,7 @@ h2.block-title {
   z-index: 10;
   box-shadow: 0 4px 60px rgba(162, 162, 162, 0.25);
 }
-.tariff .col-flex:nth-of-type(2n) .tarbtn {
+.tariff .col-flex:nth-of-type(2n) .tarbtn, .tarbtn1, .tarbtn12 {
   color: #fff;
   background: #f14d34;
 }
@@ -1622,7 +1618,7 @@ h2.block-title {
   transform: initial;
   box-shadow: none;
 }
-.tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff .tarbtn {
+.tariffs .tariff-row:hover .col-flex:nth-of-type(2n) .tariff .tarbtn,.tarbtn1, .tarbtn12 {
   color: #f89c91;
   background: #fff;
 }

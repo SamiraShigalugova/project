@@ -23,15 +23,8 @@ defineProps({
                                 <li><span>{{ text3 }}<br></span></li>
                               <li><span>{{ text4 }}<br></span></li>
                               <li><span>{{ text5 }}<br></span></li></ul>
+
                               <div class="tariff-footer">
-<<<<<<< HEAD
-                                <button class = "tarbtn" @click="tarbtn">{{ textb }}</button> <!-- Привязываем функцию openForm к событию клика на кнопке -->
-    <form v-if="isFormVisible"> <!-- Отображаем форму, только если значение свойства isFormVisible равно true -->
-      <!-- Ваша форма здесь --></form>
-                              </div></div>
-                          </div>
-                      </div>
-=======
                                 <div id="app">
     <button @click="tarbtn1" ref="tarbtn1" class="tarbtn1" :disabled="formStatus1 === 'loading'">
       {{ formStatus1 === 'loading' ? 'Отправка...' : 'СВЯЖИТЕСЬ С НАМИ!' }}
@@ -76,16 +69,11 @@ defineProps({
         </div>
       </div>
     </transition>
->>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7
 </template>
 <script>
 export default {
   data() {
     return {
-<<<<<<< HEAD
-      isFormVisible: false // Определяем свойство isFormVisible со значением false
-    }
-=======
       formHeight1: 0,
       name: '',
       email: '',
@@ -116,7 +104,6 @@ export default {
     formStatus1() {
       return this.$store.state.formStatus1;
     },
->>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7
   },
 
   watch: {
@@ -133,14 +120,6 @@ export default {
     },
   },
   methods: {
-<<<<<<< HEAD
-    tarbtn() {
-      this.isFormVisible = true; // Устанавливаем значение свойства isFormVisible в true при клике на кнопке
-    }
-  }
-}
-</script>
-=======
     tarbtn1() {
       this.$store.dispatch('tarbtn1');
       if (this.showContactForm1) {
@@ -442,5 +421,3 @@ export default {
       border: 1px solid rgb(9, 83, 9);border-radius: 5px;}
 .formel.consent-group1{display: flex;}}
 </style>
-                              
->>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7

@@ -411,4 +411,5 @@ export default {
     .btnwinsuc{color: rgb(9, 83, 9); background-color: white;
       border: 1px solid rgb(9, 83, 9);border-radius: 5px;}}
 </style>
-                              
+
+

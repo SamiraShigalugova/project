@@ -23,16 +23,15 @@ defineProps({
                               <li><span>{{ text4 }}<br></span></li></ul>
                           
                               <div class="tariff-footer">
-                                <button class = "tarbtn" @click="tarbtn">{{ textb }}</button> <!-- Привязываем функцию openForm к событию клика на кнопке -->
-    <form v-if="isFormVisible"> <!-- Отображаем форму, только если значение свойства isFormVisible равно true -->
-      <!-- Ваша форма здесь -->
-    </form>
+                                <div id="app">
+    <button @click="tarbtn" ref="tarbtn" class="tarbtn" :disabled="formStatus === 'loading'">
+      {{ formStatus === 'loading' ? 'Отправка...' : 'СВЯЖИТЕСЬ С НАМИ!' }}
+    </button>
   </div>
-<<<<<<< HEAD
+  </div>
                               </div></div></div>
-=======
-  </div>
-                              </div></div></div><transition name="fade">
+                              
+      <transition name="fade">
       <div v-if="showContactForm" class="overlay">
         <div class="contact-form-container">
           <div class="contact-form" :style="{ top: `${buttonPosition}px`, height: `${formHeight}px` }">
@@ -69,24 +68,59 @@ defineProps({
         </div>
       </div>
     </transition>
->>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7
 </template>
-<script>
+
+
+ <script>
 export default {
   data() {
     return {
-      isFormVisible: false // Определяем свойство isFormVisible со значением false
-    }
+      formHeight: 0,
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      consent: false,
+      showSuccessPopup: false,
+      showErrorPopup: false,
+      isFormLoading: false,
+    };
+  },
+  computed: {
+
+    showSuccessPopup() {
+      return this.$store.state.showSuccessPopup;
+    },
+    showErrorPopup() {
+      return this.$store.state.showErrorPopup;
+    },
+
+
+    showContactForm() {
+      return this.$store.state.showContactForm;
+    },
+    buttonPosition() {
+      return this.$store.state.buttonPosition;
+    },
+    formStatus() {
+      return this.$store.state.formStatus;
+    },
+  },
+  watch: {
+    formStatus(newStatus) {
+      if (newStatus === 'success') {
+
+        this.$store.commit('setShowSuccessPopup', true);
+
+      } else if (newStatus === 'error') {
+
+        this.$store.commit('setShowErrorPopup', true);
+
+      }
+    },
   },
   methods: {
     tarbtn() {
-<<<<<<< HEAD
-      this.isFormVisible = true; // Устанавливаем значение свойства isFormVisible в true при клике на кнопке
-    }
-  }
-}
-</script>
-=======
       this.$store.dispatch('tarbtn');
       if (this.showContactForm) {
         this.animateOpenForm();
@@ -385,4 +419,3 @@ export default {
     .btnwinsuc{color: rgb(9, 83, 9); background-color: white;
       border: 1px solid rgb(9, 83, 9);border-radius: 5px;}}
 </style>
->>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7

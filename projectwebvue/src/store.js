@@ -3,10 +3,9 @@ import { createStore } from 'vuex';
 export default createStore({
   state: {
     showContactForm: false,
+    showContactForm1: false,
+    showContactForm12: false,
     buttonPosition: 0,
-<<<<<<< HEAD
-    formStatus: 'idle', // 'idle', 'loading', 'success', 'error'
-=======
     buttonPosition1:0,
     buttonPosition12:0,
     formStatus: 'idle',
@@ -24,9 +23,17 @@ export default createStore({
     showSuccessPopup12: false,
     showErrorPopup12: false,
 
->>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7
   },
   mutations: {
+    toggleContactForm(state) {
+      state.showContactForm = !state.showContactForm;
+      if (state.showContactForm) {
+        state.buttonPosition += 10;
+        state.formStatus = 'idle';
+      } else {
+        state.formStatus = 'idle';
+      }
+    },
     tarbtn(state) {
       state.showContactForm = !state.showContactForm;
       if (state.showContactForm) {
@@ -36,6 +43,24 @@ export default createStore({
         state.formStatus = 'idle';
       }
     },
+    tarbtn1(state) {
+      state.showContactForm1 = !state.showContactForm1;
+      if (state.showContactForm1) {
+        state.buttonPosition1 = state.buttonPosition1 + 10;
+        state.formStatus1 = 'idle';
+      } else {
+        state.formStatus1 = 'idle';
+      }
+    },
+    tarbtn12(state) {
+      state.showContactForm12 = !state.showContactForm12;
+      if (state.showContactForm12) {
+        state.buttonPosition12 = state.buttonPosition12 + 10;
+        state.formStatus12 = 'idle';
+      } else {
+        state.formStatus12 = 'idle';
+      }
+    },
     closeContactForm(state) {
       state.showContactForm = false;
       state.formStatus = 'idle';
@@ -43,8 +68,6 @@ export default createStore({
     setFormStatus(state, status) {
       state.formStatus = status;
     },
-<<<<<<< HEAD
-=======
 
     closeContactForm1(state) {
       state.showContactForm1 = false;
@@ -80,25 +103,30 @@ export default createStore({
     setShowErrorPopup12(state, value) {
       state.showErrorPopup1 = value;
     },
->>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7
   },
   actions: {
+    toggleContactForm({ commit }) {
+      commit('toggleContactForm');
+    },
     tarbtn({ commit }) {
       commit('tarbtn');
+    },
+    tarbtn1({ commit }) {
+      commit('tarbtn1');
+    },
+    tarbtn12({ commit }) {
+      commit('tarbtn12');
     },
     closeContactForm({ commit }) {
       commit('closeContactForm');
     },
-    submitForm({ commit }) {
-      commit('setFormStatus', 'loading');
-<<<<<<< HEAD
-      // Здесь вы можете добавить логику отправки формы, например, через API
-      // После успешной отправки:
-      // commit('setFormStatus', 'success');
-      // В случае ошибки:
-      // commit('setFormStatus', 'error');
+    closeContactForm1({ commit }) {
+      commit('closeContactForm1');
+    },closeContactForm12({ commit }) {
+      commit('closeContactForm12');
     },
-=======
+    async submitForm({ commit, state }) {
+      commit('setFormStatus', 'loading');
   
       try {
         const response = await fetch('https://formcarry.com/s/VwBQ8BYLOEl', {
@@ -198,9 +226,12 @@ export default createStore({
           commit('setShowErrorPopup12', true);
         }
       },
->>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7
     resetForm({ commit }) {
       commit('setFormStatus', 'idle');
+    },resetForm1({ commit }) {
+      commit('setFormStatus1', 'idle');
+    },resetForm12({ commit }) {
+      commit('setFormStatus12', 'idle');
     },
   },
 });
