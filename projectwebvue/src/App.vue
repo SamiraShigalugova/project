@@ -10,9 +10,8 @@ import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
-<<<<<<< HEAD
 import tar3 from './components/tar3.vue'
-=======
+
 import { ref } from 'vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -21,8 +20,7 @@ import { ref } from 'vue';
   import 'swiper/css/navigation';
   import 'swiper/css';
 
-import NewForm from './components/NewForm.vue'
->>>>>>> bb3f52a41b04dce56143dbe224df5b2abf147c8f
+
 </script>
 
 <script>
