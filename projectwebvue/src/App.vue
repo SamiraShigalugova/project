@@ -10,6 +10,7 @@ import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
+<<<<<<< HEAD
 import Comment from './components/Comment.vue'
 import { ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -22,6 +23,14 @@ import 'swiper/css';
 
 import NewForm from './components/NewForm.vue'
 
+=======
+import tar3 from './components/tar3.vue'
+
+
+</script>
+
+<script>
+>>>>>>> 8436ad11e61882898381244d596a6144d0c1e5b7
 export default {
   data() {
     return {
