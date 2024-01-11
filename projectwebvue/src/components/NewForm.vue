@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="app">
     <button @click="tarbtn" ref="tarbtn" :disabled="formStatus === 'loading'">
       {{ formStatus === 'loading' ? 'Отправка...' : 'Связь с нами' }}
@@ -10,7 +10,7 @@
             <div class="close-button" @click="closeContactForm">×</div>
             <h2>Контактная форма</h2>
             <form @submit.prevent="submitForm">
-              <!--сюда надо сам код формы нашей запихнуть, можно у иры взять  -->
+
               <button type="submit" :disabled="formStatus === 'loading'">Отправить</button>
             </form>
             <div v-if="formStatus === 'success'" class="success-message">
@@ -82,9 +82,9 @@ export default {
     },
   },
 };
-</script>
+</script> -->
 
-<style>
+<!-- <style>
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
@@ -132,4 +132,4 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-</style>
+</style> -->

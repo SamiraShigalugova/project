@@ -26,44 +26,44 @@ defineProps({
 
                               <div class="tariff-footer">
                                 <div id="app">
-    <button @click="tarbtn1" ref="tarbtn1" class="tarbtn1" :disabled="formStatus1 === 'loading'">
-      {{ formStatus1 === 'loading' ? 'Отправка...' : 'СВЯЖИТЕСЬ С НАМИ!' }}
+    <button @click="tarbtn12" ref="tarbtn" class="tarbtn12" :disabled="formStatus1 === 'loading'">
+      {{ formStatus12 === 'loading' ? 'Отправка...' : 'СВЯЖИТЕСЬ С НАМИ!' }}
     </button>
   </div>
   </div>
                               </div></div></div>
-                              <transition name="fade1">
-      <div v-if="showContactForm1" class="overlay1">
-        <div class="contact-form-container1">
-          <div class="contact-form1" :style="{ top: `${buttonPosition1}px`, height: `${formHeight1}px` }">
-            <div class="close-button1" @click="closeContactForm1">×</div>
+                              <transition name="fade12">
+      <div v-if="showContactForm12" class="overlay12">
+        <div class="contact-form-container12">
+          <div class="contact-form12" :style="{ top: `${buttonPosition12}px`, height: `${formHeight12}px` }">
+            <div class="close-button12" @click="closeContactForm12">×</div>
             <h2>Контактная форма</h2>
-            <form @submit.prevent="submitForm1">
-        <div class="formel1">
-          <input type="text" id="name" v-model="name" placeholder="Введите имя" class="formin" required  />
+            <form @submit.prevent="submitForm12">
+        <div class="formel12">
+          <input type="text" id="name" v-model="name" placeholder="Введите имя" class="formintar" required  />
         </div>
-        <div class="formel1">
-          <input type="email" id="email" v-model="email" placeholder="Введите email" class="formin"  required />
+        <div class="formel12">
+          <input type="email" id="email" v-model="email" placeholder="Введите email" class="formintar"  required />
         </div>
-        <div class="formel1">
-          <input type="tel" id="phone" v-model="phone" @input="phoneinput" placeholder="Введите телефон" class="formin" required  />
+        <div class="formel12">
+          <input type="tel" id="phone" v-model="phone" @input="phoneinput" placeholder="Введите телефон" class="formintar" required  />
         </div>
-        <div class="formel1">
-          <textarea id="textarea" v-model="message" class="formin" placeholder="Введите сообщение" required ></textarea>
+        <div class="formel12">
+          <textarea id="textarea" v-model="message" class="formintar" placeholder="Введите сообщение" required ></textarea>
         </div>
-        <div class="formel consent-group1">
+        <div class="formeltar consent-group12">
           <input type="checkbox" id="consent" v-model="consent" required  />
-          <p class="galka">Согласие с обработкой данных</p>
+          <p class="galkatar">Согласие с обработкой данных</p>
         </div>
-              <button type="submit" class="btnform1" :disabled="formStatus1 === 'loading'">Отправить</button>
+              <button type="submit" class="btnform12" :disabled="formStatus12 === 'loading'">Отправить</button>
             </form>
-            <div v-if="formStatus1 === 'success'" class="success-message">
+            <div v-if="formStatus12 === 'success'" class="success-message">
               Форма успешно отправлена!
-              <button @click="resetForm1">Отправить еще раз</button>
+              <button @click="resetForm12">Отправить еще раз</button>
             </div>
-            <div v-if="formStatus1 === 'error'" class="error-message">
+            <div v-if="formStatus12 === 'error'" class="error-message">
               Ошибка при отправке формы. Пожалуйста, попробуйте еще раз.
-              <button @click="resetForm1">Попробовать еще раз</button>
+              <button @click="resetForm12">Попробовать еще раз</button>
             </div>
           </div>
         </div>
@@ -74,53 +74,53 @@ defineProps({
 export default {
   data() {
     return {
-      formHeight1: 0,
+      formHeight12: 0,
     };
   },
   computed: {
-    showContactForm1() {
-      return this.$store.state.showContactForm1;
+    showContactForm12() {
+      return this.$store.state.showContactForm12;
     },
-    buttonPosition1() {
-      return this.$store.state.buttonPosition1;
+    buttonPosition12() {
+      return this.$store.state.buttonPosition12;
     },
-    formStatus1() {
-      return this.$store.state.formStatus1;
+    formStatus12() {
+      return this.$store.state.formStatus12;
     },
   },
   methods: {
-    tarbtn1() {
-      this.$store.dispatch('tarbtn1');
-      if (this.showContactForm1) {
-        this.animateOpenForm1();
+    tarbtn12() {
+      this.$store.dispatch('tarbtn12');
+      if (this.showContactForm12) {
+        this.animateOpenForm12();
       }
     },
-    closeContactForm1() {
-      this.$store.dispatch('closeContactForm1');
+    closeContactForm12() {
+      this.$store.dispatch('closeContactForm12');
     },
-    animateOpenForm1() {
-      const startTime1 = performance.now();
-      const startHeight1 = 0;
-      const endHeight1 = 500; // высота формы
+    animateOpenForm12() {
+      const startTime12 = performance.now();
+      const startHeight12 = 0;
+      const endHeight12 = 500; // высота формы
 
-      const animate1 = (currentTime) => {
-        const progress1 = (currentTime - startTime1) / 500; // 500ms для анимации
-        this.formHeight1 = startHeight1 + (endHeight1 - startHeight1) * Math.min(progress1, 1);
+      const animate12 = (currentTime) => {
+        const progress12 = (currentTime - startTime12) / 500; // 500ms для анимации
+        this.formHeight12 = startHeight12 + (endHeight12 - startHeight12) * Math.min(progress12, 1);
 
-        if (progress1 < 1) {
-          requestAnimationFrame(animate1);
+        if (progress12 < 1) {
+          requestAnimationFrame(animate12);
         }
       };
 
-      requestAnimationFrame(animate1);
+      requestAnimationFrame(animate12);
     },
-    submitForm1() {
-      this.$store.dispatch('submitForm1');
+    submitForm12() {
+      this.$store.dispatch('submitForm12');
       // Дополнительная логика после отправки формы
     },
-    resetForm1() {
-      this.$store.dispatch('resetForm1');
-      this.formHeight1 = 0;
+    resetForm12() {
+      this.$store.dispatch('resetForm12');
+      this.formHeight12 = 0;
     },
   },
 };
@@ -128,8 +128,7 @@ export default {
 
 </script>
 <style>
-.galkatar{color: black;}
-.contact-form-container1 { z-index: 999999;
+.contact-form-container12 { z-index: 999999;
   position: fixed;
   top: 0;
   left: 0;
@@ -140,14 +139,14 @@ export default {
   justify-content: center;
   background: rgba(0, 0, 0, 0.5); /* полупрозрачный фон */
 }
-.fade1-enter-active, .fade1-leave-active {
+.fade12-enter-active, .fade12-leave-active {
   transition: opacity 0.5s ease-in-out;
 }
-.fade1-enter, .fade1-leave-to {
+.fade12-enter, .fade12-leave-to {
   opacity: 0;
 }
 
-.overlay1 {z-index: 9999;
+.overlay12 {z-index: 9999;
   position: fixed;
   top: 0;
   left: 0;
@@ -159,7 +158,7 @@ export default {
   justify-content: center;
 }
 
-.contact-form1 {
+.contact-form12 {
   padding: 20px;
   background-color: rgb(255, 255, 255);
   border: 2px solid orangered;
@@ -172,7 +171,7 @@ export default {
   right: 0;
   width: 50%;
 }
-.close-button1 {
+.close-button12 {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -187,8 +186,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.btnform1{text-decoration: none;
+}.galkatar{color: black;}
+.btnform12{text-decoration: none;
       display: block;
     border-radius: 5px;
   text-transform: uppercase;
@@ -205,7 +204,7 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;background-color: orangered}
-      .formeltar{border: 2px orangered; border-radius: 3px; margin:10px}
+      .formel12{border: 2px orangered; border-radius: 3px; margin:10px}
 .formintar{background-color: #ffffff;border: 1px solid orangered; border-radius: 3px;width: 100%;
   padding: 8px;
   font-size: 15px;
