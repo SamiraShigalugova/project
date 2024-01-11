@@ -13,10 +13,6 @@ import cases from './components/cases.vue'
 
 import tar3 from './components/tar3.vue'
 
-
-
-import NewForm from './components/NewForm.vue'
-
 </script>
 
 <script>
