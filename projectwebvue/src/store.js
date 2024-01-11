@@ -11,7 +11,11 @@ export default createStore({
     formStatus: 'idle',
     formStatus1: 'idle', 
     formStatus12: 'idle',
-    showContactForm: false,
+    name: '',  // Добавлено поле name
+    email: '',  // Добавлено поле email
+    phone: '',  // Добавлено поле phone
+    message: '',  // Добавлено поле message
+    consent: false,  // Добавлено поле consent
     showSuccessPopup: false,
     showErrorPopup: false,
 
@@ -111,8 +115,10 @@ export default createStore({
       try {
         const response = await fetch('https://formcarry.com/s/VwBQ8BYLOEl', {
           method: 'POST',
+          mode: 'no-cors',
           headers: {
             'Content-Type': 'application/json',
+            'Accept': 'application/json',  
           },
           body: JSON.stringify({
             name: state.name,
@@ -122,7 +128,7 @@ export default createStore({
             consent: state.consent,
           }),
         });
-  
+        console.log('Ответ от сервера:', response);
         if (response.ok) {
           commit('setFormStatus', 'success');
           commit('setShowSuccessPopup', true);
