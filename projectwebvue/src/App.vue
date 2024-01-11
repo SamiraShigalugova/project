@@ -1,5 +1,5 @@
 
-<script setup>
+<script>
 import FirstCol from './components/FirstCol.vue'
 import SecondCol from './components/SecondCol.vue'
 import SupBody from './components/SupBody.vue'
@@ -10,16 +10,18 @@ import comp2 from './components/comp2.vue'
 import comp3 from './components/comp3.vue'
 import team1 from './components/team1.vue'
 import cases from './components/cases.vue'
+import Comment from './components/Comment.vue'
+import { ref } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-import tar3 from './components/tar3.vue'
-
-
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css';
 
 import NewForm from './components/NewForm.vue'
 
-</script>
-
-<script>
 export default {
   data() {
     return {
@@ -42,6 +44,9 @@ export default {
           { question: '8.Как подать заявку на добавление пользователя, изменение настроек веб-сервера и других задач по администрированию?', answer: 'Свяжитесь с администратором, укажите информацию в заявку и подтвердите заявку. Ждите обратной связи' },
           { question: '9.В течение какого времени начинается работа по заявке?', answer: 'Обычно мы стремимся начать работу по заявке в течение 1-2 рабочих дней с момента ее получения' },
           { question: '10.В какое время работает поддержка?', answer: 'График работы службы поддержки зависит от политики нашей организации. Обычно мы предоставляем поддержку с 9:00 до 18:00 по МСК с понедельника по пятницу. Пожалуйста, проверьте наш официальный веб-сайт или свяжитесь с нами по форме ниже для получения актуальной информации о времени работы поддержки' },
+      ],
+      comments: [
+        // ... your comments data
       ]
     };
   },
@@ -97,12 +102,28 @@ export default {
       return this.activeIndexes.includes(index);
     }
   },
- 
+  components: {
+      Swiper,
+      SwiperSlide,
+      Comment
+    },
+    setup() {
+      const prev = ref(null);
+      const next = ref(null);
+      const fraction = ref(null);
+      return {
+        modules: [Autoplay, Pagination, Navigation],
+        prev,
+        next,
+        fraction
+      };
+    },
 };
 </script>
 
 
 <template>
+
   <header>
   <nav class="navbar navbar-dark navbar-expand-lg">
     <div class="container col-lg-12 col-md-12">
@@ -363,12 +384,12 @@ export default {
                   text4="Неиспользованные оплаченные часы не переносятся"
                   text5="Предоплтата от 30 000 рублей в месяц"
                   textb="Свяжитесь с нами!"></tar2>
-                  <tar3 title="VIP" text1="Консультации и работы по SEO" 
+                  <tar2 title="VIP" text1="Консультации и работы по SEO" 
                   text2="Услуги дизайнера" 
                   text3="Максимальное время реакции - в день обращения" 
                   text4="Неиспользованные оплаченные часы не переносятся"
                   text5="Предоплтата от 270 000 рублей в месяц"
-                  textb="Свяжитесь с нами!"></tar3>
+                  textb="Свяжитесь с нами!"></tar2>
                 </div>
                 </div>
                   <div class="col-xs-12">
@@ -420,9 +441,111 @@ export default {
       </div><button class="btn-case">ПОКАЗАТЬ ЕЩЁ</button>
   </div>
 </section>
-<!--ОТЗЫВЫ-->
 
 
+<div class="wrapper">
+  <Comment></Comment>
+  
+
+<section class="works_card">
+      <div class="maincont">
+
+
+    <h2 class="titler">С нами работают</h2>
+    <p class="description">Десятки компаний доверяют нам самое ценное, что у них есть в интернете – свои сайты. Мы делаем всё, чтобы наше сотрудничество было долгим.</p>
+    <swiper
+          :slidesPerView="'auto'"
+          :loop="true"
+          :spaceBetween="20"
+          :centeredSlides="true"
+          :speed="3000"
+          :autoplay="{
+            delay: 0,
+          }"
+          :modules="modules"
+          class="works_card_slider"
+        >
+      
+   
+        <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_2.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_1.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_3.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_2.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_1.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_4.svg"  alt="">
+            </div>
+          </swiper-slide>
+        </swiper>
+        <swiper
+          :slidesPerView="'auto'"
+          :loop="true"
+          :centered-slides="true"
+          :spaceBetween="20"
+          :centeredSlides="true"
+          :speed="3000"
+          :autoplay="{
+            delay: 0,
+            reverseDirection: true,
+          }"
+          :modules="modules"
+          class="works_card_slider"
+        >
+        <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_1.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_2.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_3.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_4.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_3.svg"  alt="">
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="cards">
+              <img src="./assets/imgira/works_card_2.svg"  alt="">
+            </div>
+          </swiper-slide>
+</swiper>
+</div>
+</section>
+</div>
 <!--FAQ-->
 <div>
      <center> <h2> FAQ</h2></center>
@@ -473,7 +596,10 @@ export default {
   <div class="fon1">
   <div class="line"></div>
   <div class="social-icons">
- 
+  <i class="fab fa-facebook"></i>
+  <i class="fab fa-twitter"></i>
+  <i class="fab fa-instagram"></i>
+  <i class="fab fa-youtube"></i>
   <p class="one">Проект ООО "Инитлаб", Краснодар, Россия.  </p>
   <p class="two">Drupal является зарегестрированной торговой маркой  </p>
 </div>
@@ -963,7 +1089,7 @@ video {
       color: #f14d32;
       line-height: 1.3;
     }
-    .tarbtn, .tarbtn1,.tarbtn12 {
+    .tarbtn {
   text-decoration: none;
       display: block;
     border-radius: 5px;
@@ -981,7 +1107,6 @@ video {
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: white
     }
         .tariffs-ps {
       text-align: center;
@@ -1450,7 +1575,7 @@ h2.block-title {
   color: #f14d32;
   line-height: 1.3;
 }
-.tarbtn,.tarbtn1,.tarbtn12 {
+.tarbtn {
   text-decoration: none;
   display: block;
   border-radius: 5px;
@@ -1470,7 +1595,7 @@ h2.block-title {
   bottom: 0;
   background-color: white;
   }
-.tarbtn:hover, .tarbtn:active, .tarbtn:focus, .tarbtn1:hover, .tarbtn1:active, .tarbtn1:focus,.tarbtn12:hover, .tarbtn12:active, .tarbtn12:focus {
+.tarbtn:hover, .tarbtn:active, .tarbtn:focus {
   text-decoration: none;
   color: #fff;
   background: #f14d34;
@@ -1709,7 +1834,6 @@ h2.block-title {
   font-size: 16px; 
   cursor: pointer; 
   margin: 0 auto;
-  margin-bottom: 20px;
   display: block;
   border-radius: 5px;
 }
@@ -1924,6 +2048,116 @@ overflow-x: hidden;
      
  
 }
+/*ГАЛЕРЕЯ*/
+body {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.maincont {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.description {
+  color: var(--main-black, #050C33);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  opacity: 0.7;
+}
+
+.works_card .description {
+  max-width: 740px;
+  margin: 0 auto 42px;
+}
+
+.works_card .titler {
+  margin-bottom: 10px;
+  margin-top: 160px;
+}
+
+.works_card_slider {
+  overflow: visible;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.works_card_slider:last-child {
+  margin-bottom: 160px;
+}
+
+.works_card_slider .swiper-wrapper{
+  transition-timing-function:linear;
+}
+
+.works_card_slider .swiper-slide {
+  border-radius: 5px;
+  border: 1px solid #E5E5E5;
+  cursor: pointer;
+  width: 291px;
+}
+
+.works_card_slider .swiper-slide .cards {
+  height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.comment_container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.titler {
+  color: #050C33;
+  text-align: center;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-top: 60px;
+  margin-bottom: 46px;
+}
+
+@media only screen and (max-width: 992px) {
+  .comment {
+    padding: 30px;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0px 20px;
+  }
+
+  .maincont {
+    padding: 0 20px;
+  }
+
+  .titler {
+    margin-top: 30px;
+    padding-top: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+}
 
 </style>
