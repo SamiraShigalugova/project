@@ -11,9 +11,17 @@ export default createStore({
     formStatus: 'idle',
     formStatus1: 'idle', 
     formStatus12: 'idle',
-    showContactForm: false,
+    name: '',  // Добавлено поле name
+    email: '',  // Добавлено поле email
+    phone: '',  // Добавлено поле phone
+    message: '',  // Добавлено поле message
+    consent: false,  // Добавлено поле consent
     showSuccessPopup: false,
     showErrorPopup: false,
+    showSuccessPopup1: false,
+    showErrorPopup1: false,
+    showSuccessPopup12: false,
+    showErrorPopup12: false,
 
   },
   mutations: {
@@ -83,6 +91,18 @@ export default createStore({
     setShowErrorPopup(state, value) {
       state.showErrorPopup = value;
     },
+    setShowSuccessPopup1(state, value) {
+      state.showSuccessPopup1 = value;
+    },
+    setShowErrorPopup1(state, value) {
+      state.showErrorPopup1 = value;
+    },
+    setShowSuccessPopup12(state, value) {
+      state.showSuccessPopup1 = value;
+    },
+    setShowErrorPopup12(state, value) {
+      state.showErrorPopup1 = value;
+    },
   },
   actions: {
     toggleContactForm({ commit }) {
@@ -111,8 +131,10 @@ export default createStore({
       try {
         const response = await fetch('https://formcarry.com/s/VwBQ8BYLOEl', {
           method: 'POST',
+          mode: 'no-cors',
           headers: {
             'Content-Type': 'application/json',
+            'Accept': 'application/json',  
           },
           body: JSON.stringify({
             name: state.name,
@@ -122,7 +144,7 @@ export default createStore({
             consent: state.consent,
           }),
         });
-  
+        console.log('Ответ от сервера:', response);
         if (response.ok) {
           commit('setFormStatus', 'success');
           commit('setShowSuccessPopup', true);
@@ -136,31 +158,74 @@ export default createStore({
         commit('setShowErrorPopup', true);
       }
     },
-        // commit('setFormStatus', 'success');
-        // commit('setShowSuccessPopup', true);
-      
-    //commit('setFormStatus', 'loading');
-      // Здесь вы можете добавить логику отправки формы, например, через API
-      // После успешной отправки:
-      // commit('setFormStatus', 'success');
-      // В случае ошибки:
-      // commit('setFormStatus', 'error');
-    submitForm1({ commit }) {
-      commit('setFormStatus1', 'loading');
-      // Здесь вы можете добавить логику отправки формы, например, через API
-      // После успешной отправки:
-      // commit('setFormStatus', 'success');
-      // В случае ошибки:
-      // commit('setFormStatus', 'error');
-    },
-    submitForm12({ commit }) {
-      commit('setFormStatus12', 'loading');
-      // Здесь вы можете добавить логику отправки формы, например, через API
-      // После успешной отправки:
-      // commit('setFormStatus', 'success');
-      // В случае ошибки:
-      // commit('setFormStatus', 'error');
-    },
+
+      async submitForm1({ commit, state }) {
+        commit('setFormStatus1', 'loading');
+    
+        try {
+          const response = await fetch('https://formcarry.com/s/VwBQ8BYLOEl', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',  
+            },
+            body: JSON.stringify({
+              name: state.name,
+              email: state.email,
+              phone: state.phone,
+              message: state.message,
+              consent: state.consent,
+            }),
+          });
+          console.log('Ответ от сервера:', response);
+          if (response.ok) {
+            commit('setFormStatus1', 'success');
+            commit('setShowSuccessPopup1', true);
+          } else {
+            commit('setFormStatus1', 'error');
+            commit('setShowErrorPopup1', true);
+          }
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          commit('setFormStatus1', 'error');
+          commit('setShowErrorPopup1', true);
+        }
+      }, 
+
+      async submitForm12({ commit, state }) {
+        commit('setFormStatus12', 'loading');
+    
+        try {
+          const response = await fetch('https://formcarry.com/s/VwBQ8BYLOEl', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',  
+            },
+            body: JSON.stringify({
+              name: state.name,
+              email: state.email,
+              phone: state.phone,
+              message: state.message,
+              consent: state.consent,
+            }),
+          });
+          console.log('Ответ от сервера:', response);
+          if (response.ok) {
+            commit('setFormStatus12', 'success');
+            commit('setShowSuccessPopup12', true);
+          } else {
+            commit('setFormStatus12', 'error');
+            commit('setShowErrorPopup12', true);
+          }
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          commit('setFormStatus12', 'error');
+          commit('setShowErrorPopup12', true);
+        }
+      },
     resetForm({ commit }) {
       commit('setFormStatus', 'idle');
     },resetForm1({ commit }) {

@@ -34,7 +34,7 @@ defineProps({
         <div class="contact-form-container">
           <div class="contact-form" :style="{ top: `${buttonPosition}px`, height: `${formHeight}px` }">
             <div class="close-button" @click="closeContactForm">×</div>
-            <h2>Контактная форма</h2>
+            <h2>Связь с нами</h2>
             <form @submit.prevent="submitForm">
         <div class="formeltar">
           <input type="text" id="name" v-model="name" placeholder="Введите имя" class="formintar" required  />
@@ -48,7 +48,7 @@ defineProps({
         <div class="formeltar">
           <textarea id="textarea" v-model="message" class="formintar" placeholder="Введите сообщение" required ></textarea>
         </div>
-        <div class="formeltar consent-group">
+        <div class="formeltar consent-groups">
           <input type="checkbox" id="consent" v-model="consent" required  />
           <p class="galkatar">Согласие с обработкой данных</p>
         </div>
@@ -56,11 +56,11 @@ defineProps({
             </form>
             <div v-if="showSuccessPopup" class="success-popup">
               Форма успешно отправлена!
-              <button @click="closePopup">Закрыть</button>
+              <button @click="closePopup" class="btnwinsuc">Закрыть</button>
             </div>
             <div v-if="showErrorPopup" class="error-popup">
               Ошибка при отправке формы. Пожалуйста, попробуйте еще раз.
-              <button @click="closePopup">Попробовать еще раз</button>
+              <button @click="closePopup" class="btnwiner">Попробовать еще раз</button>
             </div>
           </div>
         </div>
@@ -191,6 +191,120 @@ export default {
 
 
 <style>
+
+@media screen and (max-width: 1024px){.contact-form{width: 100%;}.contact-form-container { z-index: 999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5); /* полупрозрачный фон */
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}.formeltar{display:flex;border: 2px orangered; border-radius: 3px; margin:10px}
+.formintar{background-color: #ffffff;border: 1px solid orangered; border-radius: 3px;width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: black;
+  height: 50px;}
+  textarea.formintar {
+  resize: vertical;
+  border-radius: 3px;
+  height: 100px; 
+}
+.overlay {z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form {
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid orangered;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 25px;
+  color: orangered;
+}
+.galkatar{color: black;}
+.btnform{text-decoration: none;
+      display: block;
+    border-radius: 5px;
+  text-transform: uppercase;
+      color: #ffffff;
+      border: 1px solid #f14d34;
+      text-align: center;
+      transition: all 500ms;
+      position: absolute;
+      padding: 20px;
+      line-height: 1;
+      font-size: 12px;
+      font-weight: 500;
+      margin: 20px;
+      left: 0;
+      right: 0;
+      bottom: 0;background-color: orangered}
+      
+      .success-popup{width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  color: rgb(9, 83, 9);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-popup {width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(121, 17, 17);
+}
+.btnwiner{color: rgb(121, 17, 17);; background-color: white;
+      border: 1px solid rgb(121, 17, 17);;border-radius: 5px;}
+    .btnwinsuc{color: rgb(9, 83, 9); background-color: white;
+      border: 1px solid rgb(9, 83, 9);border-radius: 5px;}}
+@media screen and (min-width:1024px){.consent-groups{display: flex;flex-direction: row;}
+  
+
 .contact-form-container { z-index: 999999;
   position: fixed;
   top: 0;
@@ -252,14 +366,7 @@ export default {
   font-size: 25px;
   color: orangered;
 }
-.success-message,
-.error-message {
-  color: rgb(101, 5, 5); /* Добавьте цвет, который соответствует вашему дизайну */
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}.galkatar{color: black;}
+.galkatar{color: black;}
 .btnform{text-decoration: none;
       display: block;
     border-radius: 5px;
@@ -277,15 +384,15 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;background-color: orangered}
-      .success-popup,
-.error-popup {
+      
+      .success-popup{
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  background-color: #4CAF50; /* Зеленый цвет для успешной отправки */
-  color: white;
+  background-color: white;
+  color: rgb(9, 83, 9);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -293,6 +400,20 @@ export default {
 }
 
 .error-popup {
-  background-color: #f44336; /* Красный цвет для ошибки */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(121, 17, 17);
 }
+.btnwiner{color: rgb(121, 17, 17);; background-color: white;
+      border: 1px solid rgb(121, 17, 17);;border-radius: 5px;}
+    .btnwinsuc{color: rgb(9, 83, 9); background-color: white;
+      border: 1px solid rgb(9, 83, 9);border-radius: 5px;}}
 </style>
